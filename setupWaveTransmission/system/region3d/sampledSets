@@ -1,0 +1,44 @@
+fillHeight
+{
+    type swakExpression;
+    valueType set;
+    verbose true;
+    setName surface;
+ 
+    set
+    {
+        type    uniform;
+        axis    z;
+        start   ( 33.0 0.05 -0.066 );
+        end     ( 33.0 0.05 1.934 );
+        nPoints 20000;
+    }
+ 
+    expression "(alpha1 > 0.5) ? pos().z : 0";
+    accumulations (max);
+ 
+    interpolate true;
+    interpolationType cellPoint ;
+}
+fillHeightInflow
+{
+    type swakExpression;
+    valueType set;
+    verbose true;
+    setName surfaceInflow;
+ 
+    set
+    {
+        type    uniform;
+        axis    z;
+        start   ( 0.0 0.05 0 );
+        end     ( 0.0 0.05 2 );
+        nPoints 20000;
+    }
+ 
+    expression "(alpha1 > 0.5) ? pos().z : 0";
+    accumulations (max);
+ 
+    interpolate true;
+    interpolationType cellPoint ;
+}

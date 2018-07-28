@@ -1,0 +1,109 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.x                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "370";
+    object      p_rgh;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   uniform 0; 
+
+boundaryField
+{
+    front
+    {
+        type            sifPressure;
+        neighbourRegionName region2d;
+        neighbourPatchName frontIn2d;
+        neighbourFieldName H;
+        K               K;
+        value           uniform 0; 
+    }
+    back
+    {
+        type            sifPressure;
+        neighbourRegionName region2d;
+        neighbourPatchName backIn2d;
+        neighbourFieldName H;
+        K               K;
+        value           uniform 0; 
+    }
+    right
+    {
+        type            sifPressure;
+        neighbourRegionName region2d;
+        neighbourPatchName rightIn2d;
+        neighbourFieldName H;
+        K               K;
+        value           uniform 0; 
+    }
+    left
+    {
+        type            sifPressure;
+        neighbourRegionName region2d;
+        neighbourPatchName leftIn2d;
+        neighbourFieldName H;
+        K               K;
+        value           uniform 0; 
+    }
+    top
+    {
+        type            totalPressure;
+        rho             rho;
+        psi             none;
+        gamma           1;
+        p0              uniform 0;
+        value           uniform 0; 
+    }
+    bottom
+    {
+        type            buoyantPressure;
+        gradient        uniform 0;
+        value           uniform 0; 
+    }
+    house
+    {
+        type            buoyantPressure;
+        gradient        uniform 0;
+        value           uniform 0; 
+    }
+    houseFront
+    {
+        type            buoyantPressure;
+        value           uniform 0;
+    }
+    houseLeft
+    {
+        type            buoyantPressure;
+        value           uniform 0;
+    }
+    houseBack
+    {
+        type            buoyantPressure;
+        value           uniform 0;
+    }
+    houseRight
+    {
+        type            buoyantPressure;
+        value           uniform 0;
+    }
+    houseRoof
+    {
+        type            buoyantPressure;
+        value           uniform 0;
+    }
+}
+
+
+// ************************************************************************* //

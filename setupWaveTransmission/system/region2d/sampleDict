@@ -1,0 +1,5379 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     3.1                                |
+|   \\  /    A nd           | Web:         http://www.extend-project.de       |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    system;
+    object      sampleDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Set output format : choice of
+//      xmgr
+//      jplot
+//      gnuplot
+//      raw
+setFormat raw;
+
+// Surface output format. Choice of
+//      null        : suppress output
+//      foamFile    : separate points, faces and values file
+//      dx          : DX scalar or vector format
+//      vtk         : VTK ascii format
+//      raw         : x y z value format for use with e.g. gnuplot 'splot'.
+//
+// Note:
+// other formats such as obj, stl, etc can also be written (by proxy)
+// but without any values!
+surfaceFormat raw;
+
+// interpolationScheme. choice of
+//      cell          : use cell-centre value only; constant over cells (default)
+//      cellPoint     : use cell-centre and vertex values
+//      cellPointFace : use cell-centre, vertex and face values.
+// 1] vertex values determined from neighbouring cell-centre values
+// 2] face values determined using the current face interpolation scheme
+//    for the field (linear, gamma, etc.)
+interpolationScheme cell;
+
+// Fields to sample.
+fields
+(
+  H
+  HU
+);
+
+// Set sampling definition: choice of
+//      uniform             evenly distributed points on line
+//      face                one point per face intersection
+//      midPoint            one point per cell, inbetween two face intersections
+//      midPointAndFace     combination of face and midPoint
+//
+//      curve               specified points, not nessecary on line, uses
+//                          tracking
+//      cloud               specified points, uses findCell
+//
+// axis: how to write point coordinate. Choice of
+// - x/y/z: x/y/z coordinate only
+// - xyz: three columns
+//  (probably does not make sense for anything but raw)
+// - distance: distance from start of sampling line (if uses line) or
+//             distance from first specified sampling point
+//
+// type specific:
+//      uniform, face, midPoint, midPointAndFace : start and end coordinate
+//      uniform: extra number of sampling points
+//      curve, cloud: list of coordinates
+sets
+(
+
+line2d1
+{
+type uniform;
+axis distance;
+start (
+.025
+0.025 0.5 );
+end (
+.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d2
+{
+type uniform;
+axis distance;
+start (
+.075
+0.025 0.5 );
+end (
+.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d3
+{
+type uniform;
+axis distance;
+start (
+.125
+0.025 0.5 );
+end (
+.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d4
+{
+type uniform;
+axis distance;
+start (
+.175
+0.025 0.5 );
+end (
+.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d5
+{
+type uniform;
+axis distance;
+start (
+.225
+0.025 0.5 );
+end (
+.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d6
+{
+type uniform;
+axis distance;
+start (
+.275
+0.025 0.5 );
+end (
+.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d7
+{
+type uniform;
+axis distance;
+start (
+.325
+0.025 0.5 );
+end (
+.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d8
+{
+type uniform;
+axis distance;
+start (
+.375
+0.025 0.5 );
+end (
+.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d9
+{
+type uniform;
+axis distance;
+start (
+.425
+0.025 0.5 );
+end (
+.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d10
+{
+type uniform;
+axis distance;
+start (
+.475
+0.025 0.5 );
+end (
+.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d11
+{
+type uniform;
+axis distance;
+start (
+.525
+0.025 0.5 );
+end (
+.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d12
+{
+type uniform;
+axis distance;
+start (
+.575
+0.025 0.5 );
+end (
+.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d13
+{
+type uniform;
+axis distance;
+start (
+.625
+0.025 0.5 );
+end (
+.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d14
+{
+type uniform;
+axis distance;
+start (
+.675
+0.025 0.5 );
+end (
+.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d15
+{
+type uniform;
+axis distance;
+start (
+.725
+0.025 0.5 );
+end (
+.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d16
+{
+type uniform;
+axis distance;
+start (
+.775
+0.025 0.5 );
+end (
+.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d17
+{
+type uniform;
+axis distance;
+start (
+.825
+0.025 0.5 );
+end (
+.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d18
+{
+type uniform;
+axis distance;
+start (
+.875
+0.025 0.5 );
+end (
+.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d19
+{
+type uniform;
+axis distance;
+start (
+.925
+0.025 0.5 );
+end (
+.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d20
+{
+type uniform;
+axis distance;
+start (
+.975
+0.025 0.5 );
+end (
+.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d21
+{
+type uniform;
+axis distance;
+start (
+1.025
+0.025 0.5 );
+end (
+1.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d22
+{
+type uniform;
+axis distance;
+start (
+1.075
+0.025 0.5 );
+end (
+1.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d23
+{
+type uniform;
+axis distance;
+start (
+1.125
+0.025 0.5 );
+end (
+1.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d24
+{
+type uniform;
+axis distance;
+start (
+1.175
+0.025 0.5 );
+end (
+1.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d25
+{
+type uniform;
+axis distance;
+start (
+1.225
+0.025 0.5 );
+end (
+1.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d26
+{
+type uniform;
+axis distance;
+start (
+1.275
+0.025 0.5 );
+end (
+1.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d27
+{
+type uniform;
+axis distance;
+start (
+1.325
+0.025 0.5 );
+end (
+1.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d28
+{
+type uniform;
+axis distance;
+start (
+1.375
+0.025 0.5 );
+end (
+1.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d29
+{
+type uniform;
+axis distance;
+start (
+1.425
+0.025 0.5 );
+end (
+1.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d30
+{
+type uniform;
+axis distance;
+start (
+1.475
+0.025 0.5 );
+end (
+1.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d31
+{
+type uniform;
+axis distance;
+start (
+1.525
+0.025 0.5 );
+end (
+1.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d32
+{
+type uniform;
+axis distance;
+start (
+1.575
+0.025 0.5 );
+end (
+1.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d33
+{
+type uniform;
+axis distance;
+start (
+1.625
+0.025 0.5 );
+end (
+1.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d34
+{
+type uniform;
+axis distance;
+start (
+1.675
+0.025 0.5 );
+end (
+1.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d35
+{
+type uniform;
+axis distance;
+start (
+1.725
+0.025 0.5 );
+end (
+1.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d36
+{
+type uniform;
+axis distance;
+start (
+1.775
+0.025 0.5 );
+end (
+1.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d37
+{
+type uniform;
+axis distance;
+start (
+1.825
+0.025 0.5 );
+end (
+1.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d38
+{
+type uniform;
+axis distance;
+start (
+1.875
+0.025 0.5 );
+end (
+1.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d39
+{
+type uniform;
+axis distance;
+start (
+1.925
+0.025 0.5 );
+end (
+1.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d40
+{
+type uniform;
+axis distance;
+start (
+1.975
+0.025 0.5 );
+end (
+1.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d41
+{
+type uniform;
+axis distance;
+start (
+2.025
+0.025 0.5 );
+end (
+2.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d42
+{
+type uniform;
+axis distance;
+start (
+2.075
+0.025 0.5 );
+end (
+2.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d43
+{
+type uniform;
+axis distance;
+start (
+2.125
+0.025 0.5 );
+end (
+2.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d44
+{
+type uniform;
+axis distance;
+start (
+2.175
+0.025 0.5 );
+end (
+2.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d45
+{
+type uniform;
+axis distance;
+start (
+2.225
+0.025 0.5 );
+end (
+2.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d46
+{
+type uniform;
+axis distance;
+start (
+2.275
+0.025 0.5 );
+end (
+2.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d47
+{
+type uniform;
+axis distance;
+start (
+2.325
+0.025 0.5 );
+end (
+2.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d48
+{
+type uniform;
+axis distance;
+start (
+2.375
+0.025 0.5 );
+end (
+2.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d49
+{
+type uniform;
+axis distance;
+start (
+2.425
+0.025 0.5 );
+end (
+2.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d50
+{
+type uniform;
+axis distance;
+start (
+2.475
+0.025 0.5 );
+end (
+2.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d51
+{
+type uniform;
+axis distance;
+start (
+2.525
+0.025 0.5 );
+end (
+2.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d52
+{
+type uniform;
+axis distance;
+start (
+2.575
+0.025 0.5 );
+end (
+2.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d53
+{
+type uniform;
+axis distance;
+start (
+2.625
+0.025 0.5 );
+end (
+2.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d54
+{
+type uniform;
+axis distance;
+start (
+2.675
+0.025 0.5 );
+end (
+2.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d55
+{
+type uniform;
+axis distance;
+start (
+2.725
+0.025 0.5 );
+end (
+2.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d56
+{
+type uniform;
+axis distance;
+start (
+2.775
+0.025 0.5 );
+end (
+2.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d57
+{
+type uniform;
+axis distance;
+start (
+2.825
+0.025 0.5 );
+end (
+2.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d58
+{
+type uniform;
+axis distance;
+start (
+2.875
+0.025 0.5 );
+end (
+2.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d59
+{
+type uniform;
+axis distance;
+start (
+2.925
+0.025 0.5 );
+end (
+2.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d60
+{
+type uniform;
+axis distance;
+start (
+2.975
+0.025 0.5 );
+end (
+2.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d61
+{
+type uniform;
+axis distance;
+start (
+3.025
+0.025 0.5 );
+end (
+3.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d62
+{
+type uniform;
+axis distance;
+start (
+3.075
+0.025 0.5 );
+end (
+3.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d63
+{
+type uniform;
+axis distance;
+start (
+3.125
+0.025 0.5 );
+end (
+3.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d64
+{
+type uniform;
+axis distance;
+start (
+3.175
+0.025 0.5 );
+end (
+3.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d65
+{
+type uniform;
+axis distance;
+start (
+3.225
+0.025 0.5 );
+end (
+3.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d66
+{
+type uniform;
+axis distance;
+start (
+3.275
+0.025 0.5 );
+end (
+3.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d67
+{
+type uniform;
+axis distance;
+start (
+3.325
+0.025 0.5 );
+end (
+3.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d68
+{
+type uniform;
+axis distance;
+start (
+3.375
+0.025 0.5 );
+end (
+3.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d69
+{
+type uniform;
+axis distance;
+start (
+3.425
+0.025 0.5 );
+end (
+3.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d70
+{
+type uniform;
+axis distance;
+start (
+3.475
+0.025 0.5 );
+end (
+3.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d71
+{
+type uniform;
+axis distance;
+start (
+3.525
+0.025 0.5 );
+end (
+3.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d72
+{
+type uniform;
+axis distance;
+start (
+3.575
+0.025 0.5 );
+end (
+3.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d73
+{
+type uniform;
+axis distance;
+start (
+3.625
+0.025 0.5 );
+end (
+3.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d74
+{
+type uniform;
+axis distance;
+start (
+3.675
+0.025 0.5 );
+end (
+3.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d75
+{
+type uniform;
+axis distance;
+start (
+3.725
+0.025 0.5 );
+end (
+3.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d76
+{
+type uniform;
+axis distance;
+start (
+3.775
+0.025 0.5 );
+end (
+3.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d77
+{
+type uniform;
+axis distance;
+start (
+3.825
+0.025 0.5 );
+end (
+3.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d78
+{
+type uniform;
+axis distance;
+start (
+3.875
+0.025 0.5 );
+end (
+3.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d79
+{
+type uniform;
+axis distance;
+start (
+3.925
+0.025 0.5 );
+end (
+3.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d80
+{
+type uniform;
+axis distance;
+start (
+3.975
+0.025 0.5 );
+end (
+3.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d81
+{
+type uniform;
+axis distance;
+start (
+4.025
+0.025 0.5 );
+end (
+4.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d82
+{
+type uniform;
+axis distance;
+start (
+4.075
+0.025 0.5 );
+end (
+4.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d83
+{
+type uniform;
+axis distance;
+start (
+4.125
+0.025 0.5 );
+end (
+4.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d84
+{
+type uniform;
+axis distance;
+start (
+4.175
+0.025 0.5 );
+end (
+4.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d85
+{
+type uniform;
+axis distance;
+start (
+4.225
+0.025 0.5 );
+end (
+4.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d86
+{
+type uniform;
+axis distance;
+start (
+4.275
+0.025 0.5 );
+end (
+4.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d87
+{
+type uniform;
+axis distance;
+start (
+4.325
+0.025 0.5 );
+end (
+4.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d88
+{
+type uniform;
+axis distance;
+start (
+4.375
+0.025 0.5 );
+end (
+4.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d89
+{
+type uniform;
+axis distance;
+start (
+4.425
+0.025 0.5 );
+end (
+4.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d90
+{
+type uniform;
+axis distance;
+start (
+4.475
+0.025 0.5 );
+end (
+4.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d91
+{
+type uniform;
+axis distance;
+start (
+4.525
+0.025 0.5 );
+end (
+4.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d92
+{
+type uniform;
+axis distance;
+start (
+4.575
+0.025 0.5 );
+end (
+4.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d93
+{
+type uniform;
+axis distance;
+start (
+4.625
+0.025 0.5 );
+end (
+4.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d94
+{
+type uniform;
+axis distance;
+start (
+4.675
+0.025 0.5 );
+end (
+4.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d95
+{
+type uniform;
+axis distance;
+start (
+4.725
+0.025 0.5 );
+end (
+4.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d96
+{
+type uniform;
+axis distance;
+start (
+4.775
+0.025 0.5 );
+end (
+4.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d97
+{
+type uniform;
+axis distance;
+start (
+4.825
+0.025 0.5 );
+end (
+4.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d98
+{
+type uniform;
+axis distance;
+start (
+4.875
+0.025 0.5 );
+end (
+4.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d99
+{
+type uniform;
+axis distance;
+start (
+4.925
+0.025 0.5 );
+end (
+4.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d100
+{
+type uniform;
+axis distance;
+start (
+4.975
+0.025 0.5 );
+end (
+4.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d101
+{
+type uniform;
+axis distance;
+start (
+5.025
+0.025 0.5 );
+end (
+5.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d102
+{
+type uniform;
+axis distance;
+start (
+5.075
+0.025 0.5 );
+end (
+5.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d103
+{
+type uniform;
+axis distance;
+start (
+5.125
+0.025 0.5 );
+end (
+5.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d104
+{
+type uniform;
+axis distance;
+start (
+5.175
+0.025 0.5 );
+end (
+5.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d105
+{
+type uniform;
+axis distance;
+start (
+5.225
+0.025 0.5 );
+end (
+5.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d106
+{
+type uniform;
+axis distance;
+start (
+5.275
+0.025 0.5 );
+end (
+5.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d107
+{
+type uniform;
+axis distance;
+start (
+5.325
+0.025 0.5 );
+end (
+5.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d108
+{
+type uniform;
+axis distance;
+start (
+5.375
+0.025 0.5 );
+end (
+5.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d109
+{
+type uniform;
+axis distance;
+start (
+5.425
+0.025 0.5 );
+end (
+5.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d110
+{
+type uniform;
+axis distance;
+start (
+5.475
+0.025 0.5 );
+end (
+5.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d111
+{
+type uniform;
+axis distance;
+start (
+5.525
+0.025 0.5 );
+end (
+5.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d112
+{
+type uniform;
+axis distance;
+start (
+5.575
+0.025 0.5 );
+end (
+5.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d113
+{
+type uniform;
+axis distance;
+start (
+5.625
+0.025 0.5 );
+end (
+5.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d114
+{
+type uniform;
+axis distance;
+start (
+5.675
+0.025 0.5 );
+end (
+5.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d115
+{
+type uniform;
+axis distance;
+start (
+5.725
+0.025 0.5 );
+end (
+5.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d116
+{
+type uniform;
+axis distance;
+start (
+5.775
+0.025 0.5 );
+end (
+5.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d117
+{
+type uniform;
+axis distance;
+start (
+5.825
+0.025 0.5 );
+end (
+5.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d118
+{
+type uniform;
+axis distance;
+start (
+5.875
+0.025 0.5 );
+end (
+5.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d119
+{
+type uniform;
+axis distance;
+start (
+5.925
+0.025 0.5 );
+end (
+5.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d120
+{
+type uniform;
+axis distance;
+start (
+5.975
+0.025 0.5 );
+end (
+5.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d121
+{
+type uniform;
+axis distance;
+start (
+6.025
+0.025 0.5 );
+end (
+6.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d122
+{
+type uniform;
+axis distance;
+start (
+6.075
+0.025 0.5 );
+end (
+6.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d123
+{
+type uniform;
+axis distance;
+start (
+6.125
+0.025 0.5 );
+end (
+6.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d124
+{
+type uniform;
+axis distance;
+start (
+6.175
+0.025 0.5 );
+end (
+6.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d125
+{
+type uniform;
+axis distance;
+start (
+6.225
+0.025 0.5 );
+end (
+6.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d126
+{
+type uniform;
+axis distance;
+start (
+6.275
+0.025 0.5 );
+end (
+6.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d127
+{
+type uniform;
+axis distance;
+start (
+6.325
+0.025 0.5 );
+end (
+6.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d128
+{
+type uniform;
+axis distance;
+start (
+6.375
+0.025 0.5 );
+end (
+6.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d129
+{
+type uniform;
+axis distance;
+start (
+6.425
+0.025 0.5 );
+end (
+6.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d130
+{
+type uniform;
+axis distance;
+start (
+6.475
+0.025 0.5 );
+end (
+6.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d131
+{
+type uniform;
+axis distance;
+start (
+6.525
+0.025 0.5 );
+end (
+6.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d132
+{
+type uniform;
+axis distance;
+start (
+6.575
+0.025 0.5 );
+end (
+6.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d133
+{
+type uniform;
+axis distance;
+start (
+6.625
+0.025 0.5 );
+end (
+6.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d134
+{
+type uniform;
+axis distance;
+start (
+6.675
+0.025 0.5 );
+end (
+6.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d135
+{
+type uniform;
+axis distance;
+start (
+6.725
+0.025 0.5 );
+end (
+6.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d136
+{
+type uniform;
+axis distance;
+start (
+6.775
+0.025 0.5 );
+end (
+6.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d137
+{
+type uniform;
+axis distance;
+start (
+6.825
+0.025 0.5 );
+end (
+6.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d138
+{
+type uniform;
+axis distance;
+start (
+6.875
+0.025 0.5 );
+end (
+6.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d139
+{
+type uniform;
+axis distance;
+start (
+6.925
+0.025 0.5 );
+end (
+6.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d140
+{
+type uniform;
+axis distance;
+start (
+6.975
+0.025 0.5 );
+end (
+6.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d141
+{
+type uniform;
+axis distance;
+start (
+7.025
+0.025 0.5 );
+end (
+7.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d142
+{
+type uniform;
+axis distance;
+start (
+7.075
+0.025 0.5 );
+end (
+7.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d143
+{
+type uniform;
+axis distance;
+start (
+7.125
+0.025 0.5 );
+end (
+7.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d144
+{
+type uniform;
+axis distance;
+start (
+7.175
+0.025 0.5 );
+end (
+7.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d145
+{
+type uniform;
+axis distance;
+start (
+7.225
+0.025 0.5 );
+end (
+7.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d146
+{
+type uniform;
+axis distance;
+start (
+7.275
+0.025 0.5 );
+end (
+7.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d147
+{
+type uniform;
+axis distance;
+start (
+7.325
+0.025 0.5 );
+end (
+7.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d148
+{
+type uniform;
+axis distance;
+start (
+7.375
+0.025 0.5 );
+end (
+7.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d149
+{
+type uniform;
+axis distance;
+start (
+7.425
+0.025 0.5 );
+end (
+7.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d150
+{
+type uniform;
+axis distance;
+start (
+7.475
+0.025 0.5 );
+end (
+7.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d151
+{
+type uniform;
+axis distance;
+start (
+7.525
+0.025 0.5 );
+end (
+7.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d152
+{
+type uniform;
+axis distance;
+start (
+7.575
+0.025 0.5 );
+end (
+7.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d153
+{
+type uniform;
+axis distance;
+start (
+7.625
+0.025 0.5 );
+end (
+7.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d154
+{
+type uniform;
+axis distance;
+start (
+7.675
+0.025 0.5 );
+end (
+7.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d155
+{
+type uniform;
+axis distance;
+start (
+7.725
+0.025 0.5 );
+end (
+7.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d156
+{
+type uniform;
+axis distance;
+start (
+7.775
+0.025 0.5 );
+end (
+7.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d157
+{
+type uniform;
+axis distance;
+start (
+7.825
+0.025 0.5 );
+end (
+7.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d158
+{
+type uniform;
+axis distance;
+start (
+7.875
+0.025 0.5 );
+end (
+7.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d159
+{
+type uniform;
+axis distance;
+start (
+7.925
+0.025 0.5 );
+end (
+7.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d160
+{
+type uniform;
+axis distance;
+start (
+7.975
+0.025 0.5 );
+end (
+7.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d161
+{
+type uniform;
+axis distance;
+start (
+8.025
+0.025 0.5 );
+end (
+8.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d162
+{
+type uniform;
+axis distance;
+start (
+8.075
+0.025 0.5 );
+end (
+8.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d163
+{
+type uniform;
+axis distance;
+start (
+8.125
+0.025 0.5 );
+end (
+8.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d164
+{
+type uniform;
+axis distance;
+start (
+8.175
+0.025 0.5 );
+end (
+8.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d165
+{
+type uniform;
+axis distance;
+start (
+8.225
+0.025 0.5 );
+end (
+8.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d166
+{
+type uniform;
+axis distance;
+start (
+8.275
+0.025 0.5 );
+end (
+8.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d167
+{
+type uniform;
+axis distance;
+start (
+8.325
+0.025 0.5 );
+end (
+8.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d168
+{
+type uniform;
+axis distance;
+start (
+8.375
+0.025 0.5 );
+end (
+8.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d169
+{
+type uniform;
+axis distance;
+start (
+8.425
+0.025 0.5 );
+end (
+8.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d170
+{
+type uniform;
+axis distance;
+start (
+8.475
+0.025 0.5 );
+end (
+8.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d171
+{
+type uniform;
+axis distance;
+start (
+8.525
+0.025 0.5 );
+end (
+8.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d172
+{
+type uniform;
+axis distance;
+start (
+8.575
+0.025 0.5 );
+end (
+8.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d173
+{
+type uniform;
+axis distance;
+start (
+8.625
+0.025 0.5 );
+end (
+8.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d174
+{
+type uniform;
+axis distance;
+start (
+8.675
+0.025 0.5 );
+end (
+8.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d175
+{
+type uniform;
+axis distance;
+start (
+8.725
+0.025 0.5 );
+end (
+8.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d176
+{
+type uniform;
+axis distance;
+start (
+8.775
+0.025 0.5 );
+end (
+8.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d177
+{
+type uniform;
+axis distance;
+start (
+8.825
+0.025 0.5 );
+end (
+8.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d178
+{
+type uniform;
+axis distance;
+start (
+8.875
+0.025 0.5 );
+end (
+8.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d179
+{
+type uniform;
+axis distance;
+start (
+8.925
+0.025 0.5 );
+end (
+8.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d180
+{
+type uniform;
+axis distance;
+start (
+8.975
+0.025 0.5 );
+end (
+8.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d181
+{
+type uniform;
+axis distance;
+start (
+9.025
+0.025 0.5 );
+end (
+9.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d182
+{
+type uniform;
+axis distance;
+start (
+9.075
+0.025 0.5 );
+end (
+9.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d183
+{
+type uniform;
+axis distance;
+start (
+9.125
+0.025 0.5 );
+end (
+9.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d184
+{
+type uniform;
+axis distance;
+start (
+9.175
+0.025 0.5 );
+end (
+9.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d185
+{
+type uniform;
+axis distance;
+start (
+9.225
+0.025 0.5 );
+end (
+9.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d186
+{
+type uniform;
+axis distance;
+start (
+9.275
+0.025 0.5 );
+end (
+9.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d187
+{
+type uniform;
+axis distance;
+start (
+9.325
+0.025 0.5 );
+end (
+9.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d188
+{
+type uniform;
+axis distance;
+start (
+9.375
+0.025 0.5 );
+end (
+9.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d189
+{
+type uniform;
+axis distance;
+start (
+9.425
+0.025 0.5 );
+end (
+9.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d190
+{
+type uniform;
+axis distance;
+start (
+9.475
+0.025 0.5 );
+end (
+9.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d191
+{
+type uniform;
+axis distance;
+start (
+9.525
+0.025 0.5 );
+end (
+9.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d192
+{
+type uniform;
+axis distance;
+start (
+9.575
+0.025 0.5 );
+end (
+9.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d193
+{
+type uniform;
+axis distance;
+start (
+9.625
+0.025 0.5 );
+end (
+9.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d194
+{
+type uniform;
+axis distance;
+start (
+9.675
+0.025 0.5 );
+end (
+9.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d195
+{
+type uniform;
+axis distance;
+start (
+9.725
+0.025 0.5 );
+end (
+9.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d196
+{
+type uniform;
+axis distance;
+start (
+9.775
+0.025 0.5 );
+end (
+9.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d197
+{
+type uniform;
+axis distance;
+start (
+9.825
+0.025 0.5 );
+end (
+9.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d198
+{
+type uniform;
+axis distance;
+start (
+9.875
+0.025 0.5 );
+end (
+9.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d199
+{
+type uniform;
+axis distance;
+start (
+9.925
+0.025 0.5 );
+end (
+9.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d200
+{
+type uniform;
+axis distance;
+start (
+9.975
+0.025 0.5 );
+end (
+9.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d201
+{
+type uniform;
+axis distance;
+start (
+10.025
+0.025 0.5 );
+end (
+10.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d202
+{
+type uniform;
+axis distance;
+start (
+10.075
+0.025 0.5 );
+end (
+10.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d203
+{
+type uniform;
+axis distance;
+start (
+10.125
+0.025 0.5 );
+end (
+10.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d204
+{
+type uniform;
+axis distance;
+start (
+10.175
+0.025 0.5 );
+end (
+10.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d205
+{
+type uniform;
+axis distance;
+start (
+10.225
+0.025 0.5 );
+end (
+10.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d206
+{
+type uniform;
+axis distance;
+start (
+10.275
+0.025 0.5 );
+end (
+10.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d207
+{
+type uniform;
+axis distance;
+start (
+10.325
+0.025 0.5 );
+end (
+10.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d208
+{
+type uniform;
+axis distance;
+start (
+10.375
+0.025 0.5 );
+end (
+10.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d209
+{
+type uniform;
+axis distance;
+start (
+10.425
+0.025 0.5 );
+end (
+10.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d210
+{
+type uniform;
+axis distance;
+start (
+10.475
+0.025 0.5 );
+end (
+10.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d211
+{
+type uniform;
+axis distance;
+start (
+10.525
+0.025 0.5 );
+end (
+10.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d212
+{
+type uniform;
+axis distance;
+start (
+10.575
+0.025 0.5 );
+end (
+10.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d213
+{
+type uniform;
+axis distance;
+start (
+10.625
+0.025 0.5 );
+end (
+10.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d214
+{
+type uniform;
+axis distance;
+start (
+10.675
+0.025 0.5 );
+end (
+10.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d215
+{
+type uniform;
+axis distance;
+start (
+10.725
+0.025 0.5 );
+end (
+10.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d216
+{
+type uniform;
+axis distance;
+start (
+10.775
+0.025 0.5 );
+end (
+10.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d217
+{
+type uniform;
+axis distance;
+start (
+10.825
+0.025 0.5 );
+end (
+10.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d218
+{
+type uniform;
+axis distance;
+start (
+10.875
+0.025 0.5 );
+end (
+10.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d219
+{
+type uniform;
+axis distance;
+start (
+10.925
+0.025 0.5 );
+end (
+10.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d220
+{
+type uniform;
+axis distance;
+start (
+10.975
+0.025 0.5 );
+end (
+10.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d221
+{
+type uniform;
+axis distance;
+start (
+11.025
+0.025 0.5 );
+end (
+11.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d222
+{
+type uniform;
+axis distance;
+start (
+11.075
+0.025 0.5 );
+end (
+11.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d223
+{
+type uniform;
+axis distance;
+start (
+11.125
+0.025 0.5 );
+end (
+11.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d224
+{
+type uniform;
+axis distance;
+start (
+11.175
+0.025 0.5 );
+end (
+11.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d225
+{
+type uniform;
+axis distance;
+start (
+11.225
+0.025 0.5 );
+end (
+11.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d226
+{
+type uniform;
+axis distance;
+start (
+11.275
+0.025 0.5 );
+end (
+11.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d227
+{
+type uniform;
+axis distance;
+start (
+11.325
+0.025 0.5 );
+end (
+11.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d228
+{
+type uniform;
+axis distance;
+start (
+11.375
+0.025 0.5 );
+end (
+11.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d229
+{
+type uniform;
+axis distance;
+start (
+11.425
+0.025 0.5 );
+end (
+11.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d230
+{
+type uniform;
+axis distance;
+start (
+11.475
+0.025 0.5 );
+end (
+11.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d231
+{
+type uniform;
+axis distance;
+start (
+11.525
+0.025 0.5 );
+end (
+11.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d232
+{
+type uniform;
+axis distance;
+start (
+11.575
+0.025 0.5 );
+end (
+11.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d233
+{
+type uniform;
+axis distance;
+start (
+11.625
+0.025 0.5 );
+end (
+11.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d234
+{
+type uniform;
+axis distance;
+start (
+11.675
+0.025 0.5 );
+end (
+11.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d235
+{
+type uniform;
+axis distance;
+start (
+11.725
+0.025 0.5 );
+end (
+11.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d236
+{
+type uniform;
+axis distance;
+start (
+11.775
+0.025 0.5 );
+end (
+11.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d237
+{
+type uniform;
+axis distance;
+start (
+11.825
+0.025 0.5 );
+end (
+11.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d238
+{
+type uniform;
+axis distance;
+start (
+11.875
+0.025 0.5 );
+end (
+11.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d239
+{
+type uniform;
+axis distance;
+start (
+11.925
+0.025 0.5 );
+end (
+11.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d240
+{
+type uniform;
+axis distance;
+start (
+11.975
+0.025 0.5 );
+end (
+11.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d241
+{
+type uniform;
+axis distance;
+start (
+12.025
+0.025 0.5 );
+end (
+12.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d242
+{
+type uniform;
+axis distance;
+start (
+12.075
+0.025 0.5 );
+end (
+12.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d243
+{
+type uniform;
+axis distance;
+start (
+12.125
+0.025 0.5 );
+end (
+12.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d244
+{
+type uniform;
+axis distance;
+start (
+12.175
+0.025 0.5 );
+end (
+12.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d245
+{
+type uniform;
+axis distance;
+start (
+12.225
+0.025 0.5 );
+end (
+12.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d246
+{
+type uniform;
+axis distance;
+start (
+12.275
+0.025 0.5 );
+end (
+12.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d247
+{
+type uniform;
+axis distance;
+start (
+12.325
+0.025 0.5 );
+end (
+12.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d248
+{
+type uniform;
+axis distance;
+start (
+12.375
+0.025 0.5 );
+end (
+12.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d249
+{
+type uniform;
+axis distance;
+start (
+12.425
+0.025 0.5 );
+end (
+12.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d250
+{
+type uniform;
+axis distance;
+start (
+12.475
+0.025 0.5 );
+end (
+12.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d251
+{
+type uniform;
+axis distance;
+start (
+12.525
+0.025 0.5 );
+end (
+12.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d252
+{
+type uniform;
+axis distance;
+start (
+12.575
+0.025 0.5 );
+end (
+12.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d253
+{
+type uniform;
+axis distance;
+start (
+12.625
+0.025 0.5 );
+end (
+12.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d254
+{
+type uniform;
+axis distance;
+start (
+12.675
+0.025 0.5 );
+end (
+12.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d255
+{
+type uniform;
+axis distance;
+start (
+12.725
+0.025 0.5 );
+end (
+12.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d256
+{
+type uniform;
+axis distance;
+start (
+12.775
+0.025 0.5 );
+end (
+12.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d257
+{
+type uniform;
+axis distance;
+start (
+12.825
+0.025 0.5 );
+end (
+12.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d258
+{
+type uniform;
+axis distance;
+start (
+12.875
+0.025 0.5 );
+end (
+12.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d259
+{
+type uniform;
+axis distance;
+start (
+12.925
+0.025 0.5 );
+end (
+12.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d260
+{
+type uniform;
+axis distance;
+start (
+12.975
+0.025 0.5 );
+end (
+12.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d261
+{
+type uniform;
+axis distance;
+start (
+13.025
+0.025 0.5 );
+end (
+13.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d262
+{
+type uniform;
+axis distance;
+start (
+13.075
+0.025 0.5 );
+end (
+13.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d263
+{
+type uniform;
+axis distance;
+start (
+13.125
+0.025 0.5 );
+end (
+13.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d264
+{
+type uniform;
+axis distance;
+start (
+13.175
+0.025 0.5 );
+end (
+13.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d265
+{
+type uniform;
+axis distance;
+start (
+13.225
+0.025 0.5 );
+end (
+13.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d266
+{
+type uniform;
+axis distance;
+start (
+13.275
+0.025 0.5 );
+end (
+13.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d267
+{
+type uniform;
+axis distance;
+start (
+13.325
+0.025 0.5 );
+end (
+13.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d268
+{
+type uniform;
+axis distance;
+start (
+13.375
+0.025 0.5 );
+end (
+13.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d269
+{
+type uniform;
+axis distance;
+start (
+13.425
+0.025 0.5 );
+end (
+13.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d270
+{
+type uniform;
+axis distance;
+start (
+13.475
+0.025 0.5 );
+end (
+13.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d271
+{
+type uniform;
+axis distance;
+start (
+13.525
+0.025 0.5 );
+end (
+13.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d272
+{
+type uniform;
+axis distance;
+start (
+13.575
+0.025 0.5 );
+end (
+13.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d273
+{
+type uniform;
+axis distance;
+start (
+13.625
+0.025 0.5 );
+end (
+13.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d274
+{
+type uniform;
+axis distance;
+start (
+13.675
+0.025 0.5 );
+end (
+13.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d275
+{
+type uniform;
+axis distance;
+start (
+13.725
+0.025 0.5 );
+end (
+13.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d276
+{
+type uniform;
+axis distance;
+start (
+13.775
+0.025 0.5 );
+end (
+13.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d277
+{
+type uniform;
+axis distance;
+start (
+13.825
+0.025 0.5 );
+end (
+13.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d278
+{
+type uniform;
+axis distance;
+start (
+13.875
+0.025 0.5 );
+end (
+13.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d279
+{
+type uniform;
+axis distance;
+start (
+13.925
+0.025 0.5 );
+end (
+13.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d280
+{
+type uniform;
+axis distance;
+start (
+13.975
+0.025 0.5 );
+end (
+13.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d281
+{
+type uniform;
+axis distance;
+start (
+14.025
+0.025 0.5 );
+end (
+14.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d282
+{
+type uniform;
+axis distance;
+start (
+14.075
+0.025 0.5 );
+end (
+14.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d283
+{
+type uniform;
+axis distance;
+start (
+14.125
+0.025 0.5 );
+end (
+14.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d284
+{
+type uniform;
+axis distance;
+start (
+14.175
+0.025 0.5 );
+end (
+14.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d285
+{
+type uniform;
+axis distance;
+start (
+14.225
+0.025 0.5 );
+end (
+14.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d286
+{
+type uniform;
+axis distance;
+start (
+14.275
+0.025 0.5 );
+end (
+14.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d287
+{
+type uniform;
+axis distance;
+start (
+14.325
+0.025 0.5 );
+end (
+14.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d288
+{
+type uniform;
+axis distance;
+start (
+14.375
+0.025 0.5 );
+end (
+14.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d289
+{
+type uniform;
+axis distance;
+start (
+14.425
+0.025 0.5 );
+end (
+14.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d290
+{
+type uniform;
+axis distance;
+start (
+14.475
+0.025 0.5 );
+end (
+14.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d291
+{
+type uniform;
+axis distance;
+start (
+14.525
+0.025 0.5 );
+end (
+14.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d292
+{
+type uniform;
+axis distance;
+start (
+14.575
+0.025 0.5 );
+end (
+14.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d293
+{
+type uniform;
+axis distance;
+start (
+14.625
+0.025 0.5 );
+end (
+14.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d294
+{
+type uniform;
+axis distance;
+start (
+14.675
+0.025 0.5 );
+end (
+14.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d295
+{
+type uniform;
+axis distance;
+start (
+14.725
+0.025 0.5 );
+end (
+14.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d296
+{
+type uniform;
+axis distance;
+start (
+14.775
+0.025 0.5 );
+end (
+14.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d297
+{
+type uniform;
+axis distance;
+start (
+14.825
+0.025 0.5 );
+end (
+14.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d298
+{
+type uniform;
+axis distance;
+start (
+14.875
+0.025 0.5 );
+end (
+14.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d299
+{
+type uniform;
+axis distance;
+start (
+14.925
+0.025 0.5 );
+end (
+14.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d300
+{
+type uniform;
+axis distance;
+start (
+14.975
+0.025 0.5 );
+end (
+14.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d301
+{
+type uniform;
+axis distance;
+start (
+15.025
+0.025 0.5 );
+end (
+15.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d302
+{
+type uniform;
+axis distance;
+start (
+15.075
+0.025 0.5 );
+end (
+15.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d303
+{
+type uniform;
+axis distance;
+start (
+15.125
+0.025 0.5 );
+end (
+15.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d304
+{
+type uniform;
+axis distance;
+start (
+15.175
+0.025 0.5 );
+end (
+15.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d305
+{
+type uniform;
+axis distance;
+start (
+15.225
+0.025 0.5 );
+end (
+15.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d306
+{
+type uniform;
+axis distance;
+start (
+15.275
+0.025 0.5 );
+end (
+15.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d307
+{
+type uniform;
+axis distance;
+start (
+15.325
+0.025 0.5 );
+end (
+15.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d308
+{
+type uniform;
+axis distance;
+start (
+15.375
+0.025 0.5 );
+end (
+15.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d309
+{
+type uniform;
+axis distance;
+start (
+15.425
+0.025 0.5 );
+end (
+15.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d310
+{
+type uniform;
+axis distance;
+start (
+15.475
+0.025 0.5 );
+end (
+15.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d311
+{
+type uniform;
+axis distance;
+start (
+15.525
+0.025 0.5 );
+end (
+15.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d312
+{
+type uniform;
+axis distance;
+start (
+15.575
+0.025 0.5 );
+end (
+15.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d313
+{
+type uniform;
+axis distance;
+start (
+15.625
+0.025 0.5 );
+end (
+15.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d314
+{
+type uniform;
+axis distance;
+start (
+15.675
+0.025 0.5 );
+end (
+15.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d315
+{
+type uniform;
+axis distance;
+start (
+15.725
+0.025 0.5 );
+end (
+15.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d316
+{
+type uniform;
+axis distance;
+start (
+15.775
+0.025 0.5 );
+end (
+15.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d317
+{
+type uniform;
+axis distance;
+start (
+15.825
+0.025 0.5 );
+end (
+15.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d318
+{
+type uniform;
+axis distance;
+start (
+15.875
+0.025 0.5 );
+end (
+15.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d319
+{
+type uniform;
+axis distance;
+start (
+15.925
+0.025 0.5 );
+end (
+15.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d320
+{
+type uniform;
+axis distance;
+start (
+15.975
+0.025 0.5 );
+end (
+15.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d321
+{
+type uniform;
+axis distance;
+start (
+16.025
+0.025 0.5 );
+end (
+16.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d322
+{
+type uniform;
+axis distance;
+start (
+16.075
+0.025 0.5 );
+end (
+16.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d323
+{
+type uniform;
+axis distance;
+start (
+16.125
+0.025 0.5 );
+end (
+16.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d324
+{
+type uniform;
+axis distance;
+start (
+16.175
+0.025 0.5 );
+end (
+16.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d325
+{
+type uniform;
+axis distance;
+start (
+16.225
+0.025 0.5 );
+end (
+16.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d326
+{
+type uniform;
+axis distance;
+start (
+16.275
+0.025 0.5 );
+end (
+16.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d327
+{
+type uniform;
+axis distance;
+start (
+16.325
+0.025 0.5 );
+end (
+16.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d328
+{
+type uniform;
+axis distance;
+start (
+16.375
+0.025 0.5 );
+end (
+16.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d329
+{
+type uniform;
+axis distance;
+start (
+16.425
+0.025 0.5 );
+end (
+16.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d330
+{
+type uniform;
+axis distance;
+start (
+16.475
+0.025 0.5 );
+end (
+16.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d331
+{
+type uniform;
+axis distance;
+start (
+16.525
+0.025 0.5 );
+end (
+16.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d332
+{
+type uniform;
+axis distance;
+start (
+16.575
+0.025 0.5 );
+end (
+16.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d333
+{
+type uniform;
+axis distance;
+start (
+16.625
+0.025 0.5 );
+end (
+16.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d334
+{
+type uniform;
+axis distance;
+start (
+16.675
+0.025 0.5 );
+end (
+16.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d335
+{
+type uniform;
+axis distance;
+start (
+16.725
+0.025 0.5 );
+end (
+16.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d336
+{
+type uniform;
+axis distance;
+start (
+16.775
+0.025 0.5 );
+end (
+16.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d337
+{
+type uniform;
+axis distance;
+start (
+16.825
+0.025 0.5 );
+end (
+16.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d338
+{
+type uniform;
+axis distance;
+start (
+16.875
+0.025 0.5 );
+end (
+16.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d339
+{
+type uniform;
+axis distance;
+start (
+16.925
+0.025 0.5 );
+end (
+16.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d340
+{
+type uniform;
+axis distance;
+start (
+16.975
+0.025 0.5 );
+end (
+16.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d341
+{
+type uniform;
+axis distance;
+start (
+17.025
+0.025 0.5 );
+end (
+17.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d342
+{
+type uniform;
+axis distance;
+start (
+17.075
+0.025 0.5 );
+end (
+17.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d343
+{
+type uniform;
+axis distance;
+start (
+17.125
+0.025 0.5 );
+end (
+17.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d344
+{
+type uniform;
+axis distance;
+start (
+17.175
+0.025 0.5 );
+end (
+17.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d345
+{
+type uniform;
+axis distance;
+start (
+17.225
+0.025 0.5 );
+end (
+17.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d346
+{
+type uniform;
+axis distance;
+start (
+17.275
+0.025 0.5 );
+end (
+17.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d347
+{
+type uniform;
+axis distance;
+start (
+17.325
+0.025 0.5 );
+end (
+17.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d348
+{
+type uniform;
+axis distance;
+start (
+17.375
+0.025 0.5 );
+end (
+17.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d349
+{
+type uniform;
+axis distance;
+start (
+17.425
+0.025 0.5 );
+end (
+17.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d350
+{
+type uniform;
+axis distance;
+start (
+17.475
+0.025 0.5 );
+end (
+17.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d351
+{
+type uniform;
+axis distance;
+start (
+17.525
+0.025 0.5 );
+end (
+17.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d352
+{
+type uniform;
+axis distance;
+start (
+17.575
+0.025 0.5 );
+end (
+17.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d353
+{
+type uniform;
+axis distance;
+start (
+17.625
+0.025 0.5 );
+end (
+17.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d354
+{
+type uniform;
+axis distance;
+start (
+17.675
+0.025 0.5 );
+end (
+17.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d355
+{
+type uniform;
+axis distance;
+start (
+17.725
+0.025 0.5 );
+end (
+17.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d356
+{
+type uniform;
+axis distance;
+start (
+17.775
+0.025 0.5 );
+end (
+17.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d357
+{
+type uniform;
+axis distance;
+start (
+17.825
+0.025 0.5 );
+end (
+17.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d358
+{
+type uniform;
+axis distance;
+start (
+17.875
+0.025 0.5 );
+end (
+17.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d359
+{
+type uniform;
+axis distance;
+start (
+17.925
+0.025 0.5 );
+end (
+17.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d360
+{
+type uniform;
+axis distance;
+start (
+17.975
+0.025 0.5 );
+end (
+17.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d361
+{
+type uniform;
+axis distance;
+start (
+18.025
+0.025 0.5 );
+end (
+18.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d362
+{
+type uniform;
+axis distance;
+start (
+18.075
+0.025 0.5 );
+end (
+18.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d363
+{
+type uniform;
+axis distance;
+start (
+18.125
+0.025 0.5 );
+end (
+18.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d364
+{
+type uniform;
+axis distance;
+start (
+18.175
+0.025 0.5 );
+end (
+18.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d365
+{
+type uniform;
+axis distance;
+start (
+18.225
+0.025 0.5 );
+end (
+18.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d366
+{
+type uniform;
+axis distance;
+start (
+18.275
+0.025 0.5 );
+end (
+18.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d367
+{
+type uniform;
+axis distance;
+start (
+18.325
+0.025 0.5 );
+end (
+18.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d368
+{
+type uniform;
+axis distance;
+start (
+18.375
+0.025 0.5 );
+end (
+18.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d369
+{
+type uniform;
+axis distance;
+start (
+18.425
+0.025 0.5 );
+end (
+18.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d370
+{
+type uniform;
+axis distance;
+start (
+18.475
+0.025 0.5 );
+end (
+18.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d371
+{
+type uniform;
+axis distance;
+start (
+18.525
+0.025 0.5 );
+end (
+18.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d372
+{
+type uniform;
+axis distance;
+start (
+18.575
+0.025 0.5 );
+end (
+18.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d373
+{
+type uniform;
+axis distance;
+start (
+18.625
+0.025 0.5 );
+end (
+18.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d374
+{
+type uniform;
+axis distance;
+start (
+18.675
+0.025 0.5 );
+end (
+18.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d375
+{
+type uniform;
+axis distance;
+start (
+18.725
+0.025 0.5 );
+end (
+18.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d376
+{
+type uniform;
+axis distance;
+start (
+18.775
+0.025 0.5 );
+end (
+18.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d377
+{
+type uniform;
+axis distance;
+start (
+18.825
+0.025 0.5 );
+end (
+18.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d378
+{
+type uniform;
+axis distance;
+start (
+18.875
+0.025 0.5 );
+end (
+18.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d379
+{
+type uniform;
+axis distance;
+start (
+18.925
+0.025 0.5 );
+end (
+18.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d380
+{
+type uniform;
+axis distance;
+start (
+18.975
+0.025 0.5 );
+end (
+18.975
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d381
+{
+type uniform;
+axis distance;
+start (
+19.025
+0.025 0.5 );
+end (
+19.025
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d382
+{
+type uniform;
+axis distance;
+start (
+19.075
+0.025 0.5 );
+end (
+19.075
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d383
+{
+type uniform;
+axis distance;
+start (
+19.125
+0.025 0.5 );
+end (
+19.125
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d384
+{
+type uniform;
+axis distance;
+start (
+19.175
+0.025 0.5 );
+end (
+19.175
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d385
+{
+type uniform;
+axis distance;
+start (
+19.225
+0.025 0.5 );
+end (
+19.225
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d386
+{
+type uniform;
+axis distance;
+start (
+19.275
+0.025 0.5 );
+end (
+19.275
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d387
+{
+type uniform;
+axis distance;
+start (
+19.325
+0.025 0.5 );
+end (
+19.325
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d388
+{
+type uniform;
+axis distance;
+start (
+19.375
+0.025 0.5 );
+end (
+19.375
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d389
+{
+type uniform;
+axis distance;
+start (
+19.425
+0.025 0.5 );
+end (
+19.425
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d390
+{
+type uniform;
+axis distance;
+start (
+19.475
+0.025 0.5 );
+end (
+19.475
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d391
+{
+type uniform;
+axis distance;
+start (
+19.525
+0.025 0.5 );
+end (
+19.525
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d392
+{
+type uniform;
+axis distance;
+start (
+19.575
+0.025 0.5 );
+end (
+19.575
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d393
+{
+type uniform;
+axis distance;
+start (
+19.625
+0.025 0.5 );
+end (
+19.625
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d394
+{
+type uniform;
+axis distance;
+start (
+19.675
+0.025 0.5 );
+end (
+19.675
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d395
+{
+type uniform;
+axis distance;
+start (
+19.725
+0.025 0.5 );
+end (
+19.725
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d396
+{
+type uniform;
+axis distance;
+start (
+19.775
+0.025 0.5 );
+end (
+19.775
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d397
+{
+type uniform;
+axis distance;
+start (
+19.825
+0.025 0.5 );
+end (
+19.825
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d398
+{
+type uniform;
+axis distance;
+start (
+19.875
+0.025 0.5 );
+end (
+19.875
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d399
+{
+type uniform;
+axis distance;
+start (
+19.925
+0.025 0.5 );
+end (
+19.925
+0.075 0.5 );
+nPoints 2;
+}
+
+line2d400
+{
+type uniform;
+axis distance;
+start (
+19.975
+0.025 0.5 );
+end (
+19.975
+0.075 0.5 );
+nPoints 2;
+}
+
+
+);
+
+// Surface sampling definition: choice of
+//      plane : values on plane defined by point, normal.
+//      patch : values on patch.
+//
+// 1] patches are not triangulated by default
+// 2] planes are always triangulated
+// 3] iso-surfaces are always triangulated
+
+surfaces
+(
+ /*
+    constantPlane
+    {
+        type            plane;    // always triangulated
+        basePoint       (0.0501 0.0501 0.005);
+        normalVector    (0.1 0.1 1);
+
+        //- Optional: restrict to a particular zone
+        // zoneName        zone1;
+    }
+ */
+ /*
+    interpolatedPlane
+    {
+        type            plane;    // always triangulated
+        // make plane relative to the coordinateSystem (Cartesian)
+        coordinateSystem
+        {
+            origin      (0.0501 0.0501 0.005);
+        }
+        basePoint       (0 0 0);
+        normalVector    (0.1 0.1 1);
+        interpolate     true;
+    }
+
+    movingWall_constant
+    {
+        type            patch;
+        patchName       movingWall;
+        // Optional: whether to leave as faces (=default) or triangulate
+        // triangulate     false;
+    }
+
+    movingWall_interpolated
+    {
+        type            patch;
+        patchName       movingWall;
+        interpolate     true;
+        // Optional: whether to leave as faces (=default) or triangulate
+        // triangulate     false;
+    }
+ */
+ /* 
+   interpolatedIso
+    {
+        // Iso surface for interpolated values only
+        type            isoSurface;    // always triangulated
+        isoField        alpha1;
+        isoValue        0.5;
+        interpolate     true;
+
+        //zone            ABC;          // Optional: zone only
+        //exposedPatchName fixedWalls;  // Optional: zone only
+
+        // regularise      false;    // Optional: do not simplify
+    }
+ */
+    /*
+    constantIso
+    {
+        // Iso surface for constant values.
+        // Triangles guaranteed not to cross cells.
+        type            isoSurfaceCell;    // always triangulated
+        isoField        rho;
+        isoValue        0.5;
+        interpolate     false;
+        regularise      false;              // do not simplify
+    }
+
+    triangleCut
+    {
+        // Cutingplane using iso surface
+        type            cuttingPlane;
+        planeType       pointAndNormal;
+        pointAndNormalDict
+        {
+            basePoint       (0.4 0 0.4);
+            normalVector    (1 0.2 0.2);
+        }
+        interpolate     true;
+
+        //zone            ABC;          // Optional: zone only
+        //exposedPatchName fixedWalls;  // Optional: zone only
+
+        // regularise      false;    // Optional: do not simplify
+    }
+    */
+);
+
+// *********************************************************************** //

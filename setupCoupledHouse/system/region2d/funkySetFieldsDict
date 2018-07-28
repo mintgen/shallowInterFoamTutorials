@@ -1,0 +1,82 @@
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "/.automount/werner/Werner/bgschaid/bgschaid-foamStuff/DepositionTests";
+    case            "neutralTest";
+    instance        "system";
+    local           "";
+
+    class           dictionary;
+    object          funkySetFieldsDict;
+}
+
+expressions
+(
+	setBottom1-2
+	{
+		field S;
+		create false;
+                expression "pos().x*-0.01";
+                condition "(pos().y > 0.0) && (pos().y < 15.0) && (pos().x < 0)";
+                keepPatches false;
+	}
+	setBottom3-2
+	{
+		field S;
+		create false;
+                expression "(pos().x-40.0)*-0.01";
+                condition "(pos().y > 0.0) && (pos().y < 15.0) && (pos().x > 40)";
+                keepPatches false;
+	}
+	setBottom1-1
+	{
+		field S;
+		create false;
+                expression "pos().x*-0.01 + pos().y*-0.2";
+                condition "(pos().y < 0.0) && (pos().x < 0)";
+                keepPatches false;
+	}
+	setBottom1-3
+	{
+		field S;
+		create false;
+                expression "pos().x*-0.01 + (pos().y-15.0)*0.2";
+                condition "(pos().y > 15.0) && (pos().x < 0)";
+                keepPatches false;
+	}
+	setBottom2-1
+	{
+		field S;
+		create false;
+                expression "pos().y*-0.2";
+                condition "(pos().y < 0.0) && (pos().x > 0) && (pos().x < 40.0)";
+                keepPatches false;
+	}
+	setBottom2-3
+	{
+		field S;
+		create false;
+                expression "(pos().y-15.0)*0.2";
+                condition "(pos().y > 15.0) && (pos().x > 0) && (pos().x < 40.0)";
+                keepPatches false;
+	}
+	setBottom3-1
+	{
+		field S;
+		create false;
+                expression "(pos().x-40.0)*-0.01 + pos().y*-0.2";
+                condition "(pos().y < 0.0) && (pos().x > 40.0)";
+                keepPatches false;
+	}
+	setBottom3-3
+	{
+		field S;
+		create false;
+                expression "(pos().x-40.0)*-0.01 + (pos().y-15.0)*0.2";
+                condition "(pos().y > 15.0) && (pos().x > 40.0)";
+                keepPatches false;
+	}
+
+);

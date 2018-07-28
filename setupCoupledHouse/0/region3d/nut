@@ -1,0 +1,85 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.x                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "370";
+    object      nut;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -1 0 0 0 0];
+
+internalField   uniform 0.01; 
+
+boundaryField
+{
+    front
+    {
+        type            zeroGradient;
+    }
+    back
+    {
+        type            zeroGradient;
+    }
+    right
+    {
+        type            zeroGradient;
+    }
+    left
+    {
+        type            zeroGradient;
+    }
+    top
+    {
+        type            zeroGradient;
+    }
+    bottom
+    {
+        type            nutRoughWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        Cs              uniform 0.5;
+        Ks              uniform 0.001;
+        value           uniform 0.01; 
+    }
+	houseFront
+    {
+        type            nutRoughWallFunction;
+	Ks		uniform 0.001;
+	Cs		uniform 0.5;
+	value           uniform 0.001;
+    }
+	houseLeft
+    {
+        type            nutRoughWallFunction;
+	Ks		uniform 0.001;
+	Cs		uniform 0.5;
+	value           uniform 0.001;
+    }
+	houseBack
+    {
+        type            nutRoughWallFunction;
+	Ks		uniform 0.001;
+	Cs		uniform 0.5;
+	value           uniform 0.001;
+    }
+	houseRight
+    {
+        type            nutRoughWallFunction;
+	Ks		uniform 0.001;
+	Cs		uniform 0.5;
+	value           uniform 0.001;
+    }
+}
+
+
+// ************************************************************************* //

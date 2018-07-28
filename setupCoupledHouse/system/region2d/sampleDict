@@ -1,0 +1,934 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     3.1                                |
+|   \\  /    A nd           | Web:         http://www.extend-project.de       |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    system;
+    object      sampleDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Set output format : choice of
+//      xmgr
+//      jplot
+//      gnuplot
+//      raw
+setFormat raw;
+
+// Surface output format. Choice of
+//      null        : suppress output
+//      foamFile    : separate points, faces and values file
+//      dx          : DX scalar or vector format
+//      vtk         : VTK ascii format
+//      raw         : x y z value format for use with e.g. gnuplot 'splot'.
+//
+// Note:
+// other formats such as obj, stl, etc can also be written (by proxy)
+// but without any values!
+surfaceFormat raw;
+
+// interpolationScheme. choice of
+//      cell          : use cell-centre value only; constant over cells (default)
+//      cellPoint     : use cell-centre and vertex values
+//      cellPointFace : use cell-centre, vertex and face values.
+// 1] vertex values determined from neighbouring cell-centre values
+// 2] face values determined using the current face interpolation scheme
+//    for the field (linear, gamma, etc.)
+interpolationScheme cell;
+
+// Fields to sample.
+fields
+(
+  H
+  //  HU
+);
+
+// Set sampling definition: choice of
+//      uniform             evenly distributed points on line
+//      face                one point per face intersection
+//      midPoint            one point per cell, inbetween two face intersections
+//      midPointAndFace     combination of face and midPoint
+//
+//      curve               specified points, not nessecary on line, uses
+//                          tracking
+//      cloud               specified points, uses findCell
+//
+// axis: how to write point coordinate. Choice of
+// - x/y/z: x/y/z coordinate only
+// - xyz: three columns
+//  (probably does not make sense for anything but raw)
+// - distance: distance from start of sampling line (if uses line) or
+//             distance from first specified sampling point
+//
+// type specific:
+//      uniform, face, midPoint, midPointAndFace : start and end coordinate
+//      uniform: extra number of sampling points
+//      curve, cloud: list of coordinates
+sets
+(
+laengs1
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-4.77647
+0.5 );
+end (
+42.01
+-4.77647
+0.5 );
+}
+
+laengs2
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-4.32964
+0.5 );
+end (
+42.01
+-4.32964
+0.5 );
+}
+
+laengs3
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-3.90693
+0.5 );
+end (
+42.01
+-3.90693
+0.5 );
+}
+
+laengs4
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-3.50704
+0.5 );
+end (
+42.01
+-3.50704
+0.5 );
+}
+
+laengs5
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-3.12874
+0.5 );
+end (
+42.01
+-3.12874
+0.5 );
+}
+
+laengs6
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-2.77087
+0.5 );
+end (
+42.01
+-2.77087
+0.5 );
+}
+
+laengs7
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-2.43231
+0.5 );
+end (
+42.01
+-2.43231
+0.5 );
+}
+
+laengs8
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-2.11203
+0.5 );
+end (
+42.01
+-2.11203
+0.5 );
+}
+
+laengs9
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-1.80905
+0.5 );
+end (
+42.01
+-1.80905
+0.5 );
+}
+
+laengs10
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-1.52242
+0.5 );
+end (
+42.01
+-1.52242
+0.5 );
+}
+
+laengs11
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-1.25126
+0.5 );
+end (
+42.01
+-1.25126
+0.5 );
+}
+
+laengs12
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-0.99474
+0.5 );
+end (
+42.01
+-0.99474
+0.5 );
+}
+
+laengs13
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-0.752071
+0.5 );
+end (
+42.01
+-0.752071
+0.5 );
+}
+
+laengs14
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-0.522502
+0.5 );
+end (
+42.01
+-0.522502
+0.5 );
+}
+
+laengs15
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-0.305327
+0.5 );
+end (
+42.01
+-0.305327
+0.5 );
+}
+
+laengs16
+{
+type midPoint;
+axis x;
+start (
+-2.01
+-0.0998757
+0.5 );
+end (
+42.01
+-0.0998757
+0.5 );
+}
+
+laengs17
+{
+type midPoint;
+axis x;
+start (
+-2.01
+0.1
+0.5 );
+end (
+42.01
+0.1
+0.5 );
+}
+
+laengs18
+{
+type midPoint;
+axis x;
+start (
+-2.01
+0.3
+0.5 );
+end (
+42.01
+0.3
+0.5 );
+}
+
+laengs19
+{
+type midPoint;
+axis x;
+start (
+-2.01
+0.5
+0.5 );
+end (
+42.01
+0.5
+0.5 );
+}
+
+laengs20
+{
+type midPoint;
+axis x;
+start (
+-2.01
+0.7
+0.5 );
+end (
+42.01
+0.7
+0.5 );
+}
+
+laengs21
+{
+type midPoint;
+axis x;
+start (
+-2.01
+0.9
+0.5 );
+end (
+42.01
+0.9
+0.5 );
+}
+
+laengs22
+{
+type midPoint;
+axis x;
+start (
+-2.01
+1.1
+0.5 );
+end (
+42.01
+1.1
+0.5 );
+}
+
+laengs23
+{
+type midPoint;
+axis x;
+start (
+-2.01
+1.3
+0.5 );
+end (
+42.01
+1.3
+0.5 );
+}
+
+laengs24
+{
+type midPoint;
+axis x;
+start (
+-2.01
+1.5
+0.5 );
+end (
+42.01
+1.5
+0.5 );
+}
+
+laengs25
+{
+type midPoint;
+axis x;
+start (
+-2.01
+1.7
+0.5 );
+end (
+42.01
+1.7
+0.5 );
+}
+
+laengs26
+{
+type midPoint;
+axis x;
+start (
+-2.01
+1.9
+0.5 );
+end (
+42.01
+1.9
+0.5 );
+}
+
+laengs27
+{
+type midPoint;
+axis x;
+start (
+-2.01
+2.1
+0.5 );
+end (
+42.01
+2.1
+0.5 );
+}
+
+laengs28
+{
+type midPoint;
+axis x;
+start (
+-2.01
+2.3
+0.5 );
+end (
+42.01
+2.3
+0.5 );
+}
+
+laengs29
+{
+type midPoint;
+axis x;
+start (
+-2.01
+2.5
+0.5 );
+end (
+42.01
+2.5
+0.5 );
+}
+
+laengs30
+{
+type midPoint;
+axis x;
+start (
+-2.01
+2.7
+0.5 );
+end (
+42.01
+2.7
+0.5 );
+}
+
+laengs31
+{
+type midPoint;
+axis x;
+start (
+-2.01
+2.9
+0.5 );
+end (
+42.01
+2.9
+0.5 );
+}
+
+laengs32
+{
+type midPoint;
+axis x;
+start (
+-2.01
+3.1
+0.5 );
+end (
+42.01
+3.1
+0.5 );
+}
+
+laengs33
+{
+type midPoint;
+axis x;
+start (
+-2.01
+3.3
+0.5 );
+end (
+42.01
+3.3
+0.5 );
+}
+
+laengs34
+{
+type midPoint;
+axis x;
+start (
+-2.01
+3.5
+0.5 );
+end (
+42.01
+3.5
+0.5 );
+}
+
+laengs35
+{
+type midPoint;
+axis x;
+start (
+-2.01
+3.7
+0.5 );
+end (
+42.01
+3.7
+0.5 );
+}
+
+laengs36
+{
+type midPoint;
+axis x;
+start (
+-2.01
+3.9
+0.5 );
+end (
+42.01
+3.9
+0.5 );
+}
+
+laengs37
+{
+type midPoint;
+axis x;
+start (
+-2.01
+4.1
+0.5 );
+end (
+42.01
+4.1
+0.5 );
+}
+
+laengs38
+{
+type midPoint;
+axis x;
+start (
+-2.01
+4.3
+0.5 );
+end (
+42.01
+4.3
+0.5 );
+}
+
+laengs39
+{
+type midPoint;
+axis x;
+start (
+-2.01
+4.5
+0.5 );
+end (
+42.01
+4.5
+0.5 );
+}
+
+laengs40
+{
+type midPoint;
+axis x;
+start (
+-2.01
+4.7
+0.5 );
+end (
+42.01
+4.7
+0.5 );
+}
+
+laengs41
+{
+type midPoint;
+axis x;
+start (
+-2.01
+4.9
+0.5 );
+end (
+42.01
+4.9
+0.5 );
+}
+
+laengs42
+{
+type midPoint;
+axis x;
+start (
+-2.01
+5.1
+0.5 );
+end (
+42.01
+5.1
+0.5 );
+}
+
+laengs43
+{
+type midPoint;
+axis x;
+start (
+-2.01
+5.3
+0.5 );
+end (
+42.01
+5.3
+0.5 );
+}
+
+laengs44
+{
+type midPoint;
+axis x;
+start (
+-2.01
+5.5
+0.5 );
+end (
+42.01
+5.5
+0.5 );
+}
+
+laengs45
+{
+type midPoint;
+axis x;
+start (
+-2.01
+5.7
+0.5 );
+end (
+42.01
+5.7
+0.5 );
+}
+
+laengs46
+{
+type midPoint;
+axis x;
+start (
+-2.01
+5.9
+0.5 );
+end (
+42.01
+5.9
+0.5 );
+}
+
+laengs47
+{
+type midPoint;
+axis x;
+start (
+-2.01
+6.1
+0.5 );
+end (
+42.01
+6.1
+0.5 );
+}
+
+laengs48
+{
+type midPoint;
+axis x;
+start (
+-2.01
+6.3
+0.5 );
+end (
+42.01
+6.3
+0.5 );
+}
+
+laengs49
+{
+type midPoint;
+axis x;
+start (
+-2.01
+6.5
+0.5 );
+end (
+42.01
+6.5
+0.5 );
+}
+
+laengs50
+{
+type midPoint;
+axis x;
+start (
+-2.01
+6.7
+0.5 );
+end (
+42.01
+6.7
+0.5 );
+}
+
+laengs51
+{
+type midPoint;
+axis x;
+start (
+-2.01
+6.9
+0.5 );
+end (
+42.01
+6.9
+0.5 );
+}
+
+laengs52
+{
+type midPoint;
+axis x;
+start (
+-2.01
+7.1
+0.5 );
+end (
+42.01
+7.1
+0.5 );
+}
+
+laengs53
+{
+type midPoint;
+axis x;
+start (
+-2.01
+7.3
+0.5 );
+end (
+42.01
+7.3
+0.5 );
+}
+
+laengs54
+{
+type midPoint;
+axis x;
+start (
+-2.01
+7.5
+0.5 );
+end (
+42.01
+7.5
+0.5 );
+}
+
+
+);
+
+// Surface sampling definition: choice of
+//      plane : values on plane defined by point, normal.
+//      patch : values on patch.
+//
+// 1] patches are not triangulated by default
+// 2] planes are always triangulated
+// 3] iso-surfaces are always triangulated
+
+surfaces
+(
+ /*
+    constantPlane
+    {
+        type            plane;    // always triangulated
+        basePoint       (0.0501 0.0501 0.005);
+        normalVector    (0.1 0.1 1);
+
+        //- Optional: restrict to a particular zone
+        // zoneName        zone1;
+    }
+ */
+ /*
+    interpolatedPlane
+    {
+        type            plane;    // always triangulated
+        // make plane relative to the coordinateSystem (Cartesian)
+        coordinateSystem
+        {
+            origin      (0.0501 0.0501 0.005);
+        }
+        basePoint       (0 0 0);
+        normalVector    (0.1 0.1 1);
+        interpolate     true;
+    }
+
+    movingWall_constant
+    {
+        type            patch;
+        patchName       movingWall;
+        // Optional: whether to leave as faces (=default) or triangulate
+        // triangulate     false;
+    }
+
+    movingWall_interpolated
+    {
+        type            patch;
+        patchName       movingWall;
+        interpolate     true;
+        // Optional: whether to leave as faces (=default) or triangulate
+        // triangulate     false;
+    }
+ */
+ /* 
+   interpolatedIso
+    {
+        // Iso surface for interpolated values only
+        type            isoSurface;    // always triangulated
+        isoField        alpha1;
+        isoValue        0.5;
+        interpolate     true;
+
+        //zone            ABC;          // Optional: zone only
+        //exposedPatchName fixedWalls;  // Optional: zone only
+
+        // regularise      false;    // Optional: do not simplify
+    }
+ */
+    /*
+    constantIso
+    {
+        // Iso surface for constant values.
+        // Triangles guaranteed not to cross cells.
+        type            isoSurfaceCell;    // always triangulated
+        isoField        rho;
+        isoValue        0.5;
+        interpolate     false;
+        regularise      false;              // do not simplify
+    }
+
+    triangleCut
+    {
+        // Cutingplane using iso surface
+        type            cuttingPlane;
+        planeType       pointAndNormal;
+        pointAndNormalDict
+        {
+            basePoint       (0.4 0 0.4);
+            normalVector    (1 0.2 0.2);
+        }
+        interpolate     true;
+
+        //zone            ABC;          // Optional: zone only
+        //exposedPatchName fixedWalls;  // Optional: zone only
+
+        // regularise      false;    // Optional: do not simplify
+    }
+    */
+);
+
+// *********************************************************************** //

@@ -1,0 +1,106 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/region2d/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+11
+(
+    frontOutCenter2d
+    {
+        type            patch;
+        nFaces          75;
+        startFace       74500;
+    }
+    frontOutSides2d
+    {
+        type            patch;
+        nFaces          60;
+        startFace       74575;
+    }
+    backOut2d
+    {
+        type            patch;
+        nFaces          135;
+        startFace       74635;
+    }
+    rightOut2d
+    {
+        type            patch;
+        nFaces          390;
+        startFace       74770;
+    }
+    leftOut2d
+    {
+        type            patch;
+        nFaces          390;
+        startFace       75160;
+    }
+    frontIn2d
+    {
+        type            sifMappedPatch;
+        nFaces          75;
+        startFace       75550;
+	sampleMode      nearestPatchFace;
+	sampleRegion    region3d;
+	samplePatch     front;
+	offset          (0 0 0);
+    }
+    backIn2d
+    {
+        type            sifMappedPatch;
+        nFaces          75;
+        startFace       75625;
+	sampleMode      nearestPatchFace;
+	sampleRegion    region3d;
+	samplePatch     back;
+	offset          (0 0 0);
+    }
+    leftIn2d
+    {
+        type            sifMappedPatch;
+        nFaces          200;
+        startFace       75700;
+	sampleMode      nearestPatchFace;
+	sampleRegion    region3d;
+	samplePatch     left;
+	offset          (0 0 0);
+    }
+    rightIn2d
+    {
+        type            sifMappedPatch;
+        nFaces          200;
+        startFace       75900;
+	sampleMode      nearestPatchFace;
+	sampleRegion    region3d;
+	samplePatch     right;
+	offset          (0 0 0);
+    }
+    bottom2d
+    {
+        type            empty;
+        inGroups        1(empty);
+        nFaces          37650;
+        startFace       76100;
+    }
+    top2d
+    {
+        type            empty;
+        inGroups        1(empty);
+        nFaces          37650;
+        startFace       113750;
+    }
+)
+
+// ************************************************************************* //

@@ -1,0 +1,96 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.x                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "370";
+    object      omega;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 -1 0 0 0 0];
+
+internalField   uniform 10; 
+
+boundaryField
+{
+    front
+    {
+        type            sifOmega;
+        refValue        uniform 1; 
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        value           uniform 1; 
+        neighbourFieldName H;
+    }
+    back
+    {
+        type            sifOmega;
+        refValue        uniform 1; 
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        value           uniform 1; 
+        neighbourFieldName H;
+    }
+    right
+    {
+        type            sifOmega;
+        refValue        uniform 1; 
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        value           uniform 1; 
+        neighbourFieldName H;
+    }
+    left
+    {
+        type            sifOmega;
+        refValue        uniform 1; 
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        value           uniform 1; 
+        neighbourFieldName H;
+    }
+    top
+    {
+        type            zeroGradient;
+    }
+    bottom
+    {
+        type            omegaWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        beta1           0.075;
+        value           uniform 10;
+    }
+	houseFront
+    {
+        type            omegaWallFunction;
+        value           uniform 10;
+    }
+	houseLeft
+    {
+        type            omegaWallFunction;
+        value           uniform 10;
+    }
+	houseBack
+    {
+        type            omegaWallFunction;
+        value           uniform 10;
+    }
+	houseRight
+    {
+        type            omegaWallFunction;
+        value           uniform 10;
+    }
+}
+
+
+// ************************************************************************* //

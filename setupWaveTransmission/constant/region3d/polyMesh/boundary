@@ -1,0 +1,86 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/region3d/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+9
+(
+    frontA
+    {
+        type            sifMappedPatch;
+        nFaces          300;
+        startFace       778200;
+        sampleMode      nearestPatchFace;
+        sampleRegion    region2d;
+        samplePatch     back2d;
+        offset          ( 0 0 -1 );
+    }
+    frontC
+    {
+        type            patch;
+        nFaces          300;
+        startFace       778500;
+    }
+    backB
+    {
+        type            patch;
+        nFaces          300;
+        startFace       778800;
+    }
+    backC
+    {
+        type            patch;
+        nFaces          300;
+        startFace       779100;
+    }
+    bottomA
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          1100;
+        startFace       779400;
+    }
+    bottomC
+    {
+        type            patch;
+        nFaces          100;
+        startFace       780500;
+    }
+    topA
+    {
+        type            directMappedPatch;
+        nFaces          1100;
+        startFace       780600;
+        sampleMode      nearestCell;
+        sampleRegion    region3d;
+        samplePatch     none;
+        offset          ( 0 0 -2 );
+    }
+    topB
+    {
+        type            patch;
+        nFaces          100;
+        startFace       781700;
+    }
+    wallsAll
+    {
+        type            empty;
+        inGroups        1(empty);
+        nFaces          780000;
+        startFace       781800;
+    }
+)
+
+// ************************************************************************* //

@@ -1,0 +1,70 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     3.1                                |
+|   \\  /    A nd           | Web:         http://www.extend-project.de       |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     shallowInterFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          endTime;
+//stopAt          writeNow;
+
+endTime         20;
+
+deltaT          0.001;
+
+//writeControl    timeStep;
+writeControl    adjustableRunTime;
+
+writeInterval   0.01;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression uncompressed;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;
+
+adjustTimeStep  on;
+
+maxCo           0.5;
+maxAlphaCo      0.5;
+
+maxDeltaT       0.05;
+
+libs (
+      "libOpenFOAM.so"  // OpenFOAM will (probably) crash if this library is not specified
+      "libsimpleSwakFunctionObjects.so"
+      "libswakFunctionObjects.so"
+      "libgroovyBC.so"  // Not needed now, but we will need it later when altering the boundary conditions
+     );
+ 
+functions
+{
+//        #include "sampledSets"
+	#include "ForceAndMoment"
+}
+
+// ************************************************************************* //

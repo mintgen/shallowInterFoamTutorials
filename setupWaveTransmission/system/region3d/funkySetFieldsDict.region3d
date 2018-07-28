@@ -1,0 +1,1855 @@
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "/.automount/werner/Werner/bgschaid/bgschaid-foamStuff/DepositionTests";
+    case            "neutralTest";
+    instance        "system";
+    local           "";
+
+    class           dictionary;
+    object          funkySetFieldsDict;
+}
+
+defaultVariables (
+"sigma=2.5;"
+"mu=30.0;"
+"amp=0.4;"
+);
+
+
+expressions
+(
+
+/*
+initBasin
+{
+field alpha1;
+create false;
+expression "1";
+variables $defaultVariables;
+condition "pos().z < 0";
+}
+
+initBasinPd
+{
+field pd;
+create false;
+expression "-750";
+variables $defaultVariables;
+condition "pos().z < 0";
+}
+
+initBasinU
+{
+field U;
+create false;
+expression "vector(0,0,0)";
+variables $defaultVariables;
+condition "pos().z < 0";
+}
+*/
+
+
+initWave201
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.067393256568821 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(201-1)*0.1)) < 0.026";
+}
+
+initWave202
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.067374428280384 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(202-1)*0.1)) < 0.026";
+}
+
+initWave203
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.067338938095072 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(203-1)*0.1)) < 0.026";
+}
+
+initWave204
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.067281392890615 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(204-1)*0.1)) < 0.026";
+}
+
+initWave205
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.067198160694967 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(205-1)*0.1)) < 0.026";
+}
+
+initWave206
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.067086070086603 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(206-1)*0.1)) < 0.026";
+}
+
+initWave207
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.066944361417271 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(207-1)*0.1)) < 0.026";
+}
+
+initWave208
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.066773035850031 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(208-1)*0.1)) < 0.026";
+}
+
+initWave209
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.066573455689742 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(209-1)*0.1)) < 0.026";
+}
+
+initWave210
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.066347673851904 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(210-1)*0.1)) < 0.026";
+}
+
+initWave211
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.06609858377244 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(211-1)*0.1)) < 0.026";
+}
+
+initWave212
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.065829448947021 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(212-1)*0.1)) < 0.026";
+}
+
+initWave213
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.065544002810878 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(213-1)*0.1)) < 0.026";
+}
+
+initWave214
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.065246188488519 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(214-1)*0.1)) < 0.026";
+}
+
+initWave215
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.064940158683747 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(215-1)*0.1)) < 0.026";
+}
+
+initWave216
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.064630195659605 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(216-1)*0.1)) < 0.026";
+}
+
+initWave217
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.064320581088451 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(217-1)*0.1)) < 0.026";
+}
+
+initWave218
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.064014115631038 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(218-1)*0.1)) < 0.026";
+}
+
+initWave219
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.06371432992823 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(219-1)*0.1)) < 0.026";
+}
+
+initWave220
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.063424514230468 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(220-1)*0.1)) < 0.026";
+}
+
+initWave221
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.063147388417663 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(221-1)*0.1)) < 0.026";
+}
+
+initWave222
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.062885512179522 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(222-1)*0.1)) < 0.026";
+}
+
+initWave223
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.062640945045514 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(223-1)*0.1)) < 0.026";
+}
+
+initWave224
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.062415366434987 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(224-1)*0.1)) < 0.026";
+}
+
+initWave225
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.062210035724158 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(225-1)*0.1)) < 0.026";
+}
+
+initWave226
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.062025692253193 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(226-1)*0.1)) < 0.026";
+}
+
+initWave227
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061862695372229 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(227-1)*0.1)) < 0.026";
+}
+
+initWave228
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061720864435364 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(228-1)*0.1)) < 0.026";
+}
+
+initWave229
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061599638829703 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(229-1)*0.1)) < 0.026";
+}
+
+initWave230
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061498057959332 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(230-1)*0.1)) < 0.026";
+}
+
+initWave231
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.06141481125135 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(231-1)*0.1)) < 0.026";
+}
+
+initWave232
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061348178151843 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(232-1)*0.1)) < 0.026";
+}
+
+initWave233
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061296188113866 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(233-1)*0.1)) < 0.026";
+}
+
+initWave234
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061256670604486 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(234-1)*0.1)) < 0.026";
+}
+
+initWave235
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061227165087741 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(235-1)*0.1)) < 0.026";
+}
+
+initWave236
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061205231036665 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(236-1)*0.1)) < 0.026";
+}
+
+initWave237
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061188187919296 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(237-1)*0.1)) < 0.026";
+}
+
+initWave238
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061173365214659 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(238-1)*0.1)) < 0.026";
+}
+
+initWave239
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061158182406802 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(239-1)*0.1)) < 0.026";
+}
+
+initWave240
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061140059005821 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(240-1)*0.1)) < 0.026";
+}
+
+initWave241
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061116494556852 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(241-1)*0.1)) < 0.026";
+}
+
+initWave242
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.061085288656132 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(242-1)*0.1)) < 0.026";
+}
+
+initWave243
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.06104435096803 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(243-1)*0.1)) < 0.026";
+}
+
+initWave244
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.060991921233013 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(244-1)*0.1)) < 0.026";
+}
+
+initWave245
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.06092650928374 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(245-1)*0.1)) < 0.026";
+}
+
+initWave246
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.060846915046 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(246-1)*0.1)) < 0.026";
+}
+
+initWave247
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.060752308542763 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(247-1)*0.1)) < 0.026";
+}
+
+initWave248
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.060642089881169 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(248-1)*0.1)) < 0.026";
+}
+
+initWave249
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.06051620928253 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(249-1)*0.1)) < 0.026";
+}
+
+initWave250
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.060374907026277 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(250-1)*0.1)) < 0.026";
+}
+
+initWave251
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.060218583418933 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(251-1)*0.1)) < 0.026";
+}
+
+initWave252
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.060047838797038 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(252-1)*0.1)) < 0.026";
+}
+
+initWave253
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.059863653516226 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(253-1)*0.1)) < 0.026";
+}
+
+initWave254
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.05966706792712 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(254-1)*0.1)) < 0.026";
+}
+
+initWave255
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.059459462366361 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(255-1)*0.1)) < 0.026";
+}
+
+initWave256
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.059242307142542 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(256-1)*0.1)) < 0.026";
+}
+
+initWave257
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.059017142520224 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(257-1)*0.1)) < 0.026";
+}
+
+initWave258
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.058785728727901 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(258-1)*0.1)) < 0.026";
+}
+
+initWave259
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.058549775947992 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(259-1)*0.1)) < 0.026";
+}
+
+initWave260
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.058311074318886 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(260-1)*0.1)) < 0.026";
+}
+
+initWave261
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.058071403936857 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(261-1)*0.1)) < 0.026";
+}
+
+initWave262
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.057832534860125 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(262-1)*0.1)) < 0.026";
+}
+
+initWave263
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.057596027111843 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(263-1)*0.1)) < 0.026";
+}
+
+initWave264
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.057363450689101 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(264-1)*0.1)) < 0.026";
+}
+
+initWave265
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.057136205563934 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(265-1)*0.1)) < 0.026";
+}
+
+initWave266
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.056915491691335 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(266-1)*0.1)) < 0.026";
+}
+
+initWave267
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.056702369013251 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(267-1)*0.1)) < 0.026";
+}
+
+initWave268
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.056497687462603 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(268-1)*0.1)) < 0.026";
+}
+
+initWave269
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.056302116963284 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(269-1)*0.1)) < 0.026";
+}
+
+initWave270
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.056116117438167 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(270-1)*0.1)) < 0.026";
+}
+
+initWave271
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.055939888808112 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(271-1)*0.1)) < 0.026";
+}
+
+initWave272
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.055773500993967 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(272-1)*0.1)) < 0.026";
+}
+
+initWave273
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.055616753914574 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(273-1)*0.1)) < 0.026";
+}
+
+initWave274
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.055469307494768 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(274-1)*0.1)) < 0.026";
+}
+
+initWave275
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.055330621658388 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(275-1)*0.1)) < 0.026";
+}
+
+initWave276
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.055200006333267 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(276-1)*0.1)) < 0.026";
+}
+
+initWave277
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.055076658450243 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(277-1)*0.1)) < 0.026";
+}
+
+initWave278
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.054959585944157 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(278-1)*0.1)) < 0.026";
+}
+
+initWave279
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.054847731750852 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(279-1)*0.1)) < 0.026";
+}
+
+initWave280
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.054740000811182 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(280-1)*0.1)) < 0.026";
+}
+
+initWave281
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.054635213072002 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(281-1)*0.1)) < 0.026";
+}
+
+initWave282
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.054532138481183 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(282-1)*0.1)) < 0.026";
+}
+
+initWave283
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.054429625992601 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(283-1)*0.1)) < 0.026";
+}
+
+initWave284
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.054326383564142 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(284-1)*0.1)) < 0.026";
+}
+
+initWave285
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.054221458163719 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(285-1)*0.1)) < 0.026";
+}
+
+initWave286
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.054113679759242 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(286-1)*0.1)) < 0.026";
+}
+
+initWave287
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.054002070326645 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(287-1)*0.1)) < 0.026";
+}
+
+initWave288
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.053885734847878 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(288-1)*0.1)) < 0.026";
+}
+
+initWave289
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.0537639153109 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(289-1)*0.1)) < 0.026";
+}
+
+initWave290
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.053635942709696 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(290-1)*0.1)) < 0.026";
+}
+
+initWave291
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.053501331042257 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(291-1)*0.1)) < 0.026";
+}
+
+initWave292
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.053359646313594 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(292-1)*0.1)) < 0.026";
+}
+
+initWave293
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.053210716531725 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(293-1)*0.1)) < 0.026";
+}
+
+initWave294
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.053054381708685 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(294-1)*0.1)) < 0.026";
+}
+
+initWave295
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.052890724859513 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(295-1)*0.1)) < 0.026";
+}
+
+initWave296
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.05271985200126 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(296-1)*0.1)) < 0.026";
+}
+
+initWave297
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.052542141152074 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(297-1)*0.1)) < 0.026";
+}
+
+initWave298
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.052357922331314 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(298-1)*0.1)) < 0.026";
+}
+
+initWave299
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.052167726557536 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(299-1)*0.1)) < 0.026";
+}
+
+initWave300
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.051972137848796 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(300-1)*0.1)) < 0.026";
+}
+
+initWave301
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.051771844221546 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(301-1)*0.1)) < 0.026";
+}
+
+initWave302
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.051567538690837 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(302-1)*0.1)) < 0.026";
+}
+
+initWave303
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.05136005026961 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(303-1)*0.1)) < 0.026";
+}
+
+initWave304
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.051150074968604 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(304-1)*0.1)) < 0.026";
+}
+
+initWave305
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.050938479796349 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(305-1)*0.1)) < 0.026";
+}
+
+initWave306
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.050726036758972 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(306-1)*0.1)) < 0.026";
+}
+
+initWave307
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.050513519860488 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(307-1)*0.1)) < 0.026";
+}
+
+initWave308
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.050301633103206 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(308-1)*0.1)) < 0.026";
+}
+
+initWave309
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.050091123487528 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(309-1)*0.1)) < 0.026";
+}
+
+initWave310
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.049882600012054 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(310-1)*0.1)) < 0.026";
+}
+
+initWave311
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.04967659667428 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(311-1)*0.1)) < 0.026";
+}
+
+initWave312
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.049473654469997 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(312-1)*0.1)) < 0.026";
+}
+
+initWave313
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.049274093394397 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(313-1)*0.1)) < 0.026";
+}
+
+initWave314
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.049078282441664 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(314-1)*0.1)) < 0.026";
+}
+
+initWave315
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.048886393605385 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(315-1)*0.1)) < 0.026";
+}
+
+initWave316
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.048698578878847 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(316-1)*0.1)) < 0.026";
+}
+
+initWave317
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.048514867254629 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(317-1)*0.1)) < 0.026";
+}
+
+initWave318
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.048335187725703 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(318-1)*0.1)) < 0.026";
+}
+
+initWave319
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.048159412284546 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(319-1)*0.1)) < 0.026";
+}
+
+initWave320
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.047987319923934 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(320-1)*0.1)) < 0.026";
+}
+
+initWave321
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.047818585636642 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(321-1)*0.1)) < 0.026";
+}
+
+initWave322
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.047652914415753 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(322-1)*0.1)) < 0.026";
+}
+
+initWave323
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.047489863254542 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(323-1)*0.1)) < 0.026";
+}
+
+initWave324
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.04732900314689 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(324-1)*0.1)) < 0.026";
+}
+
+initWave325
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.047169858086778 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(325-1)*0.1)) < 0.026";
+}
+
+initWave326
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.047011884068889 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(326-1)*0.1)) < 0.026";
+}
+
+initWave327
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.04685457108821 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(327-1)*0.1)) < 0.026";
+}
+
+initWave328
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.046697453140325 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(328-1)*0.1)) < 0.026";
+}
+
+initWave329
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.046539967221124 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(329-1)*0.1)) < 0.026";
+}
+
+initWave330
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.046381670327395 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(330-1)*0.1)) < 0.026";
+}
+
+initWave331
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.046222058456138 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(331-1)*0.1)) < 0.026";
+}
+
+initWave332
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.046060715605046 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(332-1)*0.1)) < 0.026";
+}
+
+initWave333
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.04589726077202 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(333-1)*0.1)) < 0.026";
+}
+
+initWave334
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.045731334955665 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(334-1)*0.1)) < 0.026";
+}
+
+initWave335
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.045562620155075 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(335-1)*0.1)) < 0.026";
+}
+
+initWave336
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.045390893669343 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(336-1)*0.1)) < 0.026";
+}
+
+initWave337
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.045215921398364 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(337-1)*0.1)) < 0.026";
+}
+
+initWave338
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.045037582041835 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(338-1)*0.1)) < 0.026";
+}
+
+initWave339
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.044855725099858 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(339-1)*0.1)) < 0.026";
+}
+
+initWave340
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.044670310972834 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(340-1)*0.1)) < 0.026";
+}
+
+initWave341
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.044481371261063 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(341-1)*0.1)) < 0.026";
+}
+
+initWave342
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.044288947865249 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(342-1)*0.1)) < 0.026";
+}
+
+initWave343
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.044093102785894 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(343-1)*0.1)) < 0.026";
+}
+
+initWave344
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.043894025223595 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(344-1)*0.1)) < 0.026";
+}
+
+initWave345
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.04369191287925 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(345-1)*0.1)) < 0.026";
+}
+
+initWave346
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.043487031953559 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(346-1)*0.1)) < 0.026";
+}
+
+initWave347
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.043279683347123 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(347-1)*0.1)) < 0.026";
+}
+
+initWave348
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.043070145460437 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(348-1)*0.1)) < 0.026";
+}
+
+initWave349
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.042858802194097 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(349-1)*0.1)) < 0.026";
+}
+
+initWave350
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.042646020948408 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(350-1)*0.1)) < 0.026";
+}
+
+initWave351
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.042432159123473 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(351-1)*0.1)) < 0.026";
+}
+
+initWave352
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.042217635319391 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(352-1)*0.1)) < 0.026";
+}
+
+initWave353
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.042002837436567 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(353-1)*0.1)) < 0.026";
+}
+
+initWave354
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.041788151974202 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(354-1)*0.1)) < 0.026";
+}
+
+initWave355
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.041573924231992 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(355-1)*0.1)) < 0.026";
+}
+
+initWave356
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.041360494209331 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(356-1)*0.1)) < 0.026";
+}
+
+initWave357
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.041148215605109 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(357-1)*0.1)) < 0.026";
+}
+
+initWave358
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.040937500520125 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(358-1)*0.1)) < 0.026";
+}
+
+initWave359
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.040728553256695 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(359-1)*0.1)) < 0.026";
+}
+
+initWave360
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.040521607914383 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(360-1)*0.1)) < 0.026";
+}
+
+initWave361
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.040316657191269 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(361-1)*0.1)) < 0.026";
+}
+
+initWave362
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.040113644885031 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(362-1)*0.1)) < 0.026";
+}
+
+initWave363
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.039912430294323 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(363-1)*0.1)) < 0.026";
+}
+
+initWave364
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.039712825318006 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(364-1)*0.1)) < 0.026";
+}
+
+initWave365
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.039514705055294 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(365-1)*0.1)) < 0.026";
+}
+
+initWave366
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.039317829205395 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(366-1)*0.1)) < 0.026";
+}
+
+initWave367
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.039121982367224 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(367-1)*0.1)) < 0.026";
+}
+
+initWave368
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.038926905040428 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(368-1)*0.1)) < 0.026";
+}
+
+initWave369
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.038732248523507 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(369-1)*0.1)) < 0.026";
+}
+
+initWave370
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.038537672615086 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(370-1)*0.1)) < 0.026";
+}
+
+initWave371
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.038342981714882 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(371-1)*0.1)) < 0.026";
+}
+
+initWave372
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.038148007522374 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(372-1)*0.1)) < 0.026";
+}
+
+initWave373
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.037952441637055 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(373-1)*0.1)) < 0.026";
+}
+
+initWave374
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.037756213858995 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(374-1)*0.1)) < 0.026";
+}
+
+initWave375
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.037559035088025 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(375-1)*0.1)) < 0.026";
+}
+
+initWave376
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.037360751622399 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(376-1)*0.1)) < 0.026";
+}
+
+initWave377
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.037161224560001 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(377-1)*0.1)) < 0.026";
+}
+
+initWave378
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.036960345200963 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(378-1)*0.1)) < 0.026";
+}
+
+initWave379
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.036757987346356 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(379-1)*0.1)) < 0.026";
+}
+
+initWave380
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.036554076696892 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(380-1)*0.1)) < 0.026";
+}
+
+initWave381
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.036348506452554 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(381-1)*0.1)) < 0.026";
+}
+
+initWave382
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.036141151813231 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(382-1)*0.1)) < 0.026";
+}
+
+initWave383
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.035931928878766 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(383-1)*0.1)) < 0.026";
+}
+
+initWave384
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.035720745149058 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(384-1)*0.1)) < 0.026";
+}
+
+initWave385
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.035507579123978 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(385-1)*0.1)) < 0.026";
+}
+
+initWave386
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.035292372203395 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(386-1)*0.1)) < 0.026";
+}
+
+initWave387
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.03507513528728 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(387-1)*0.1)) < 0.026";
+}
+
+initWave388
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.034855881775602 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(388-1)*0.1)) < 0.026";
+}
+
+initWave389
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.03463469266846 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(389-1)*0.1)) < 0.026";
+}
+
+initWave390
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.034411602686297 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(390-1)*0.1)) < 0.026";
+}
+
+initWave391
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.034186726659265 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(391-1)*0.1)) < 0.026";
+}
+
+initWave392
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.033960176486648 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(392-1)*0.1)) < 0.026";
+}
+
+initWave393
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.033732087927629 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(393-1)*0.1)) < 0.026";
+}
+
+initWave394
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.033502592661757 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(394-1)*0.1)) < 0.026";
+}
+
+initWave395
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.033271756318882 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(395-1)*0.1)) < 0.026";
+}
+
+initWave396
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.033039710289104 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(396-1)*0.1)) < 0.026";
+}
+
+initWave397
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.032806505162506 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(397-1)*0.1)) < 0.026";
+}
+
+initWave398
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.032572254539087 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(398-1)*0.1)) < 0.026";
+}
+
+initWave399
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.032337014179 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(399-1)*0.1)) < 0.026";
+}
+
+initWave400
+{
+field alpha1;
+create false;
+expression "max(0,min(1,0.5 - (pos().z - ( 1.032100865862215 + amp * exp(-0.5*pow(((pos().x-mu)/sigma),2)) - pos().x * 0.001)) / 0.01))";
+variables $defaultVariables;
+condition "mag(pos().x- (0.05+(400-1)*0.1)) < 0.026";
+}
+
+);

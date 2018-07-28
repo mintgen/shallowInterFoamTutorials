@@ -1,0 +1,4 @@
+// Modified from source: http://www.cfdsupport.com/Turbomachinery-CFD-manual/node374.html
+// Call with 'setSet -region <regionName> -batch <locationOfThisFile> -noVTK'
+
+cellSet c0 new boxToCell (-1000 -1000 -1000) (1000 1000 1000)

@@ -1,0 +1,31 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.x                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       uniformDimensionedVectorField;
+    location    "constant";
+    object      g;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -2 0 0 0 0];
+value           ( 0 0 -9.81 );
+
+// Entspricht 0,5 % Gefälle
+//value           ( 0.0490493868866 0 -9.80987737732 );
+
+// Entspricht Is = 1.23598254994687e-03
+//value           ( 0.0121245 0 -9.81 );
+
+
+//value           ( 9.81 0 0 );
+
+
+// ************************************************************************* //

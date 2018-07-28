@@ -1,0 +1,4979 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     3.1                                |
+|   \\  /    A nd           | Web:         http://www.extend-project.de       |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    system;
+    object      sampleDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Set output format : choice of
+//      xmgr
+//      jplot
+//      gnuplot
+//      raw
+setFormat raw;
+
+// Surface output format. Choice of
+//      null        : suppress output
+//      foamFile    : separate points, faces and values file
+//      dx          : DX scalar or vector format
+//      vtk         : VTK ascii format
+//      raw         : x y z value format for use with e.g. gnuplot 'splot'.
+//
+// Note:
+// other formats such as obj, stl, etc can also be written (by proxy)
+// but without any values!
+surfaceFormat raw;
+
+// interpolationScheme. choice of
+//      cell          : use cell-centre value only; constant over cells (default)
+//      cellPoint     : use cell-centre and vertex values
+//      cellPointFace : use cell-centre, vertex and face values.
+// 1] vertex values determined from neighbouring cell-centre values
+// 2] face values determined using the current face interpolation scheme
+//    for the field (linear, gamma, etc.)
+interpolationScheme cell;
+
+// Fields to sample.
+fields
+(
+  alpha1
+  U
+);
+
+// Set sampling definition: choice of
+//      uniform             evenly distributed points on line
+//      face                one point per face intersection
+//      midPoint            one point per cell, inbetween two face intersections
+//      midPointAndFace     combination of face and midPoint
+//
+//      curve               specified points, not nessecary on line, uses
+//                          tracking
+//      cloud               specified points, uses findCell
+//
+// axis: how to write point coordinate. Choice of
+// - x/y/z: x/y/z coordinate only
+// - xyz: three columns
+//  (probably does not make sense for anything but raw)
+// - distance: distance from start of sampling line (if uses line) or
+//             distance from first specified sampling point
+//
+// type specific:
+//      uniform, face, midPoint, midPointAndFace : start and end coordinate
+//      uniform: extra number of sampling points
+//      curve, cloud: list of coordinates
+sets
+(
+
+line3d401
+{
+type midPoint;
+axis distance;
+start (
+20.025
+0.05
+-.04005
+);
+end (
+20.025
+0.05
+3.05995
+);
+}
+
+line3d402
+{
+type midPoint;
+axis distance;
+start (
+20.075
+0.05
+-.04015
+);
+end (
+20.075
+0.05
+3.05985
+);
+}
+
+line3d403
+{
+type midPoint;
+axis distance;
+start (
+20.125
+0.05
+-.04025
+);
+end (
+20.125
+0.05
+3.05975
+);
+}
+
+line3d404
+{
+type midPoint;
+axis distance;
+start (
+20.175
+0.05
+-.04035
+);
+end (
+20.175
+0.05
+3.05965
+);
+}
+
+line3d405
+{
+type midPoint;
+axis distance;
+start (
+20.225
+0.05
+-.04045
+);
+end (
+20.225
+0.05
+3.05955
+);
+}
+
+line3d406
+{
+type midPoint;
+axis distance;
+start (
+20.275
+0.05
+-.04055
+);
+end (
+20.275
+0.05
+3.05945
+);
+}
+
+line3d407
+{
+type midPoint;
+axis distance;
+start (
+20.325
+0.05
+-.04065
+);
+end (
+20.325
+0.05
+3.05935
+);
+}
+
+line3d408
+{
+type midPoint;
+axis distance;
+start (
+20.375
+0.05
+-.04075
+);
+end (
+20.375
+0.05
+3.05925
+);
+}
+
+line3d409
+{
+type midPoint;
+axis distance;
+start (
+20.425
+0.05
+-.04085
+);
+end (
+20.425
+0.05
+3.05915
+);
+}
+
+line3d410
+{
+type midPoint;
+axis distance;
+start (
+20.475
+0.05
+-.04095
+);
+end (
+20.475
+0.05
+3.05905
+);
+}
+
+line3d411
+{
+type midPoint;
+axis distance;
+start (
+20.525
+0.05
+-.04105
+);
+end (
+20.525
+0.05
+3.05895
+);
+}
+
+line3d412
+{
+type midPoint;
+axis distance;
+start (
+20.575
+0.05
+-.04115
+);
+end (
+20.575
+0.05
+3.05885
+);
+}
+
+line3d413
+{
+type midPoint;
+axis distance;
+start (
+20.625
+0.05
+-.04125
+);
+end (
+20.625
+0.05
+3.05875
+);
+}
+
+line3d414
+{
+type midPoint;
+axis distance;
+start (
+20.675
+0.05
+-.04135
+);
+end (
+20.675
+0.05
+3.05865
+);
+}
+
+line3d415
+{
+type midPoint;
+axis distance;
+start (
+20.725
+0.05
+-.04145
+);
+end (
+20.725
+0.05
+3.05855
+);
+}
+
+line3d416
+{
+type midPoint;
+axis distance;
+start (
+20.775
+0.05
+-.04155
+);
+end (
+20.775
+0.05
+3.05845
+);
+}
+
+line3d417
+{
+type midPoint;
+axis distance;
+start (
+20.825
+0.05
+-.04165
+);
+end (
+20.825
+0.05
+3.05835
+);
+}
+
+line3d418
+{
+type midPoint;
+axis distance;
+start (
+20.875
+0.05
+-.04175
+);
+end (
+20.875
+0.05
+3.05825
+);
+}
+
+line3d419
+{
+type midPoint;
+axis distance;
+start (
+20.925
+0.05
+-.04185
+);
+end (
+20.925
+0.05
+3.05815
+);
+}
+
+line3d420
+{
+type midPoint;
+axis distance;
+start (
+20.975
+0.05
+-.04195
+);
+end (
+20.975
+0.05
+3.05805
+);
+}
+
+line3d421
+{
+type midPoint;
+axis distance;
+start (
+21.025
+0.05
+-.04205
+);
+end (
+21.025
+0.05
+3.05795
+);
+}
+
+line3d422
+{
+type midPoint;
+axis distance;
+start (
+21.075
+0.05
+-.04215
+);
+end (
+21.075
+0.05
+3.05785
+);
+}
+
+line3d423
+{
+type midPoint;
+axis distance;
+start (
+21.125
+0.05
+-.04225
+);
+end (
+21.125
+0.05
+3.05775
+);
+}
+
+line3d424
+{
+type midPoint;
+axis distance;
+start (
+21.175
+0.05
+-.04235
+);
+end (
+21.175
+0.05
+3.05765
+);
+}
+
+line3d425
+{
+type midPoint;
+axis distance;
+start (
+21.225
+0.05
+-.04245
+);
+end (
+21.225
+0.05
+3.05755
+);
+}
+
+line3d426
+{
+type midPoint;
+axis distance;
+start (
+21.275
+0.05
+-.04255
+);
+end (
+21.275
+0.05
+3.05745
+);
+}
+
+line3d427
+{
+type midPoint;
+axis distance;
+start (
+21.325
+0.05
+-.04265
+);
+end (
+21.325
+0.05
+3.05735
+);
+}
+
+line3d428
+{
+type midPoint;
+axis distance;
+start (
+21.375
+0.05
+-.04275
+);
+end (
+21.375
+0.05
+3.05725
+);
+}
+
+line3d429
+{
+type midPoint;
+axis distance;
+start (
+21.425
+0.05
+-.04285
+);
+end (
+21.425
+0.05
+3.05715
+);
+}
+
+line3d430
+{
+type midPoint;
+axis distance;
+start (
+21.475
+0.05
+-.04295
+);
+end (
+21.475
+0.05
+3.05705
+);
+}
+
+line3d431
+{
+type midPoint;
+axis distance;
+start (
+21.525
+0.05
+-.04305
+);
+end (
+21.525
+0.05
+3.05695
+);
+}
+
+line3d432
+{
+type midPoint;
+axis distance;
+start (
+21.575
+0.05
+-.04315
+);
+end (
+21.575
+0.05
+3.05685
+);
+}
+
+line3d433
+{
+type midPoint;
+axis distance;
+start (
+21.625
+0.05
+-.04325
+);
+end (
+21.625
+0.05
+3.05675
+);
+}
+
+line3d434
+{
+type midPoint;
+axis distance;
+start (
+21.675
+0.05
+-.04335
+);
+end (
+21.675
+0.05
+3.05665
+);
+}
+
+line3d435
+{
+type midPoint;
+axis distance;
+start (
+21.725
+0.05
+-.04345
+);
+end (
+21.725
+0.05
+3.05655
+);
+}
+
+line3d436
+{
+type midPoint;
+axis distance;
+start (
+21.775
+0.05
+-.04355
+);
+end (
+21.775
+0.05
+3.05645
+);
+}
+
+line3d437
+{
+type midPoint;
+axis distance;
+start (
+21.825
+0.05
+-.04365
+);
+end (
+21.825
+0.05
+3.05635
+);
+}
+
+line3d438
+{
+type midPoint;
+axis distance;
+start (
+21.875
+0.05
+-.04375
+);
+end (
+21.875
+0.05
+3.05625
+);
+}
+
+line3d439
+{
+type midPoint;
+axis distance;
+start (
+21.925
+0.05
+-.04385
+);
+end (
+21.925
+0.05
+3.05615
+);
+}
+
+line3d440
+{
+type midPoint;
+axis distance;
+start (
+21.975
+0.05
+-.04395
+);
+end (
+21.975
+0.05
+3.05605
+);
+}
+
+line3d441
+{
+type midPoint;
+axis distance;
+start (
+22.025
+0.05
+-.04405
+);
+end (
+22.025
+0.05
+3.05595
+);
+}
+
+line3d442
+{
+type midPoint;
+axis distance;
+start (
+22.075
+0.05
+-.04415
+);
+end (
+22.075
+0.05
+3.05585
+);
+}
+
+line3d443
+{
+type midPoint;
+axis distance;
+start (
+22.125
+0.05
+-.04425
+);
+end (
+22.125
+0.05
+3.05575
+);
+}
+
+line3d444
+{
+type midPoint;
+axis distance;
+start (
+22.175
+0.05
+-.04435
+);
+end (
+22.175
+0.05
+3.05565
+);
+}
+
+line3d445
+{
+type midPoint;
+axis distance;
+start (
+22.225
+0.05
+-.04445
+);
+end (
+22.225
+0.05
+3.05555
+);
+}
+
+line3d446
+{
+type midPoint;
+axis distance;
+start (
+22.275
+0.05
+-.04455
+);
+end (
+22.275
+0.05
+3.05545
+);
+}
+
+line3d447
+{
+type midPoint;
+axis distance;
+start (
+22.325
+0.05
+-.04465
+);
+end (
+22.325
+0.05
+3.05535
+);
+}
+
+line3d448
+{
+type midPoint;
+axis distance;
+start (
+22.375
+0.05
+-.04475
+);
+end (
+22.375
+0.05
+3.05525
+);
+}
+
+line3d449
+{
+type midPoint;
+axis distance;
+start (
+22.425
+0.05
+-.04485
+);
+end (
+22.425
+0.05
+3.05515
+);
+}
+
+line3d450
+{
+type midPoint;
+axis distance;
+start (
+22.475
+0.05
+-.04495
+);
+end (
+22.475
+0.05
+3.05505
+);
+}
+
+line3d451
+{
+type midPoint;
+axis distance;
+start (
+22.525
+0.05
+-.04505
+);
+end (
+22.525
+0.05
+3.05495
+);
+}
+
+line3d452
+{
+type midPoint;
+axis distance;
+start (
+22.575
+0.05
+-.04515
+);
+end (
+22.575
+0.05
+3.05485
+);
+}
+
+line3d453
+{
+type midPoint;
+axis distance;
+start (
+22.625
+0.05
+-.04525
+);
+end (
+22.625
+0.05
+3.05475
+);
+}
+
+line3d454
+{
+type midPoint;
+axis distance;
+start (
+22.675
+0.05
+-.04535
+);
+end (
+22.675
+0.05
+3.05465
+);
+}
+
+line3d455
+{
+type midPoint;
+axis distance;
+start (
+22.725
+0.05
+-.04545
+);
+end (
+22.725
+0.05
+3.05455
+);
+}
+
+line3d456
+{
+type midPoint;
+axis distance;
+start (
+22.775
+0.05
+-.04555
+);
+end (
+22.775
+0.05
+3.05445
+);
+}
+
+line3d457
+{
+type midPoint;
+axis distance;
+start (
+22.825
+0.05
+-.04565
+);
+end (
+22.825
+0.05
+3.05435
+);
+}
+
+line3d458
+{
+type midPoint;
+axis distance;
+start (
+22.875
+0.05
+-.04575
+);
+end (
+22.875
+0.05
+3.05425
+);
+}
+
+line3d459
+{
+type midPoint;
+axis distance;
+start (
+22.925
+0.05
+-.04585
+);
+end (
+22.925
+0.05
+3.05415
+);
+}
+
+line3d460
+{
+type midPoint;
+axis distance;
+start (
+22.975
+0.05
+-.04595
+);
+end (
+22.975
+0.05
+3.05405
+);
+}
+
+line3d461
+{
+type midPoint;
+axis distance;
+start (
+23.025
+0.05
+-.04605
+);
+end (
+23.025
+0.05
+3.05395
+);
+}
+
+line3d462
+{
+type midPoint;
+axis distance;
+start (
+23.075
+0.05
+-.04615
+);
+end (
+23.075
+0.05
+3.05385
+);
+}
+
+line3d463
+{
+type midPoint;
+axis distance;
+start (
+23.125
+0.05
+-.04625
+);
+end (
+23.125
+0.05
+3.05375
+);
+}
+
+line3d464
+{
+type midPoint;
+axis distance;
+start (
+23.175
+0.05
+-.04635
+);
+end (
+23.175
+0.05
+3.05365
+);
+}
+
+line3d465
+{
+type midPoint;
+axis distance;
+start (
+23.225
+0.05
+-.04645
+);
+end (
+23.225
+0.05
+3.05355
+);
+}
+
+line3d466
+{
+type midPoint;
+axis distance;
+start (
+23.275
+0.05
+-.04655
+);
+end (
+23.275
+0.05
+3.05345
+);
+}
+
+line3d467
+{
+type midPoint;
+axis distance;
+start (
+23.325
+0.05
+-.04665
+);
+end (
+23.325
+0.05
+3.05335
+);
+}
+
+line3d468
+{
+type midPoint;
+axis distance;
+start (
+23.375
+0.05
+-.04675
+);
+end (
+23.375
+0.05
+3.05325
+);
+}
+
+line3d469
+{
+type midPoint;
+axis distance;
+start (
+23.425
+0.05
+-.04685
+);
+end (
+23.425
+0.05
+3.05315
+);
+}
+
+line3d470
+{
+type midPoint;
+axis distance;
+start (
+23.475
+0.05
+-.04695
+);
+end (
+23.475
+0.05
+3.05305
+);
+}
+
+line3d471
+{
+type midPoint;
+axis distance;
+start (
+23.525
+0.05
+-.04705
+);
+end (
+23.525
+0.05
+3.05295
+);
+}
+
+line3d472
+{
+type midPoint;
+axis distance;
+start (
+23.575
+0.05
+-.04715
+);
+end (
+23.575
+0.05
+3.05285
+);
+}
+
+line3d473
+{
+type midPoint;
+axis distance;
+start (
+23.625
+0.05
+-.04725
+);
+end (
+23.625
+0.05
+3.05275
+);
+}
+
+line3d474
+{
+type midPoint;
+axis distance;
+start (
+23.675
+0.05
+-.04735
+);
+end (
+23.675
+0.05
+3.05265
+);
+}
+
+line3d475
+{
+type midPoint;
+axis distance;
+start (
+23.725
+0.05
+-.04745
+);
+end (
+23.725
+0.05
+3.05255
+);
+}
+
+line3d476
+{
+type midPoint;
+axis distance;
+start (
+23.775
+0.05
+-.04755
+);
+end (
+23.775
+0.05
+3.05245
+);
+}
+
+line3d477
+{
+type midPoint;
+axis distance;
+start (
+23.825
+0.05
+-.04765
+);
+end (
+23.825
+0.05
+3.05235
+);
+}
+
+line3d478
+{
+type midPoint;
+axis distance;
+start (
+23.875
+0.05
+-.04775
+);
+end (
+23.875
+0.05
+3.05225
+);
+}
+
+line3d479
+{
+type midPoint;
+axis distance;
+start (
+23.925
+0.05
+-.04785
+);
+end (
+23.925
+0.05
+3.05215
+);
+}
+
+line3d480
+{
+type midPoint;
+axis distance;
+start (
+23.975
+0.05
+-.04795
+);
+end (
+23.975
+0.05
+3.05205
+);
+}
+
+line3d481
+{
+type midPoint;
+axis distance;
+start (
+24.025
+0.05
+-.04805
+);
+end (
+24.025
+0.05
+3.05195
+);
+}
+
+line3d482
+{
+type midPoint;
+axis distance;
+start (
+24.075
+0.05
+-.04815
+);
+end (
+24.075
+0.05
+3.05185
+);
+}
+
+line3d483
+{
+type midPoint;
+axis distance;
+start (
+24.125
+0.05
+-.04825
+);
+end (
+24.125
+0.05
+3.05175
+);
+}
+
+line3d484
+{
+type midPoint;
+axis distance;
+start (
+24.175
+0.05
+-.04835
+);
+end (
+24.175
+0.05
+3.05165
+);
+}
+
+line3d485
+{
+type midPoint;
+axis distance;
+start (
+24.225
+0.05
+-.04845
+);
+end (
+24.225
+0.05
+3.05155
+);
+}
+
+line3d486
+{
+type midPoint;
+axis distance;
+start (
+24.275
+0.05
+-.04855
+);
+end (
+24.275
+0.05
+3.05145
+);
+}
+
+line3d487
+{
+type midPoint;
+axis distance;
+start (
+24.325
+0.05
+-.04865
+);
+end (
+24.325
+0.05
+3.05135
+);
+}
+
+line3d488
+{
+type midPoint;
+axis distance;
+start (
+24.375
+0.05
+-.04875
+);
+end (
+24.375
+0.05
+3.05125
+);
+}
+
+line3d489
+{
+type midPoint;
+axis distance;
+start (
+24.425
+0.05
+-.04885
+);
+end (
+24.425
+0.05
+3.05115
+);
+}
+
+line3d490
+{
+type midPoint;
+axis distance;
+start (
+24.475
+0.05
+-.04895
+);
+end (
+24.475
+0.05
+3.05105
+);
+}
+
+line3d491
+{
+type midPoint;
+axis distance;
+start (
+24.525
+0.05
+-.04905
+);
+end (
+24.525
+0.05
+3.05095
+);
+}
+
+line3d492
+{
+type midPoint;
+axis distance;
+start (
+24.575
+0.05
+-.04915
+);
+end (
+24.575
+0.05
+3.05085
+);
+}
+
+line3d493
+{
+type midPoint;
+axis distance;
+start (
+24.625
+0.05
+-.04925
+);
+end (
+24.625
+0.05
+3.05075
+);
+}
+
+line3d494
+{
+type midPoint;
+axis distance;
+start (
+24.675
+0.05
+-.04935
+);
+end (
+24.675
+0.05
+3.05065
+);
+}
+
+line3d495
+{
+type midPoint;
+axis distance;
+start (
+24.725
+0.05
+-.04945
+);
+end (
+24.725
+0.05
+3.05055
+);
+}
+
+line3d496
+{
+type midPoint;
+axis distance;
+start (
+24.775
+0.05
+-.04955
+);
+end (
+24.775
+0.05
+3.05045
+);
+}
+
+line3d497
+{
+type midPoint;
+axis distance;
+start (
+24.825
+0.05
+-.04965
+);
+end (
+24.825
+0.05
+3.05035
+);
+}
+
+line3d498
+{
+type midPoint;
+axis distance;
+start (
+24.875
+0.05
+-.04975
+);
+end (
+24.875
+0.05
+3.05025
+);
+}
+
+line3d499
+{
+type midPoint;
+axis distance;
+start (
+24.925
+0.05
+-.04985
+);
+end (
+24.925
+0.05
+3.05015
+);
+}
+
+line3d500
+{
+type midPoint;
+axis distance;
+start (
+24.975
+0.05
+-.04995
+);
+end (
+24.975
+0.05
+3.05005
+);
+}
+
+line3d501
+{
+type midPoint;
+axis distance;
+start (
+25.025
+0.05
+-.05005
+);
+end (
+25.025
+0.05
+3.04995
+);
+}
+
+line3d502
+{
+type midPoint;
+axis distance;
+start (
+25.075
+0.05
+-.05015
+);
+end (
+25.075
+0.05
+3.04985
+);
+}
+
+line3d503
+{
+type midPoint;
+axis distance;
+start (
+25.125
+0.05
+-.05025
+);
+end (
+25.125
+0.05
+3.04975
+);
+}
+
+line3d504
+{
+type midPoint;
+axis distance;
+start (
+25.175
+0.05
+-.05035
+);
+end (
+25.175
+0.05
+3.04965
+);
+}
+
+line3d505
+{
+type midPoint;
+axis distance;
+start (
+25.225
+0.05
+-.05045
+);
+end (
+25.225
+0.05
+3.04955
+);
+}
+
+line3d506
+{
+type midPoint;
+axis distance;
+start (
+25.275
+0.05
+-.05055
+);
+end (
+25.275
+0.05
+3.04945
+);
+}
+
+line3d507
+{
+type midPoint;
+axis distance;
+start (
+25.325
+0.05
+-.05065
+);
+end (
+25.325
+0.05
+3.04935
+);
+}
+
+line3d508
+{
+type midPoint;
+axis distance;
+start (
+25.375
+0.05
+-.05075
+);
+end (
+25.375
+0.05
+3.04925
+);
+}
+
+line3d509
+{
+type midPoint;
+axis distance;
+start (
+25.425
+0.05
+-.05085
+);
+end (
+25.425
+0.05
+3.04915
+);
+}
+
+line3d510
+{
+type midPoint;
+axis distance;
+start (
+25.475
+0.05
+-.05095
+);
+end (
+25.475
+0.05
+3.04905
+);
+}
+
+line3d511
+{
+type midPoint;
+axis distance;
+start (
+25.525
+0.05
+-.05105
+);
+end (
+25.525
+0.05
+3.04895
+);
+}
+
+line3d512
+{
+type midPoint;
+axis distance;
+start (
+25.575
+0.05
+-.05115
+);
+end (
+25.575
+0.05
+3.04885
+);
+}
+
+line3d513
+{
+type midPoint;
+axis distance;
+start (
+25.625
+0.05
+-.05125
+);
+end (
+25.625
+0.05
+3.04875
+);
+}
+
+line3d514
+{
+type midPoint;
+axis distance;
+start (
+25.675
+0.05
+-.05135
+);
+end (
+25.675
+0.05
+3.04865
+);
+}
+
+line3d515
+{
+type midPoint;
+axis distance;
+start (
+25.725
+0.05
+-.05145
+);
+end (
+25.725
+0.05
+3.04855
+);
+}
+
+line3d516
+{
+type midPoint;
+axis distance;
+start (
+25.775
+0.05
+-.05155
+);
+end (
+25.775
+0.05
+3.04845
+);
+}
+
+line3d517
+{
+type midPoint;
+axis distance;
+start (
+25.825
+0.05
+-.05165
+);
+end (
+25.825
+0.05
+3.04835
+);
+}
+
+line3d518
+{
+type midPoint;
+axis distance;
+start (
+25.875
+0.05
+-.05175
+);
+end (
+25.875
+0.05
+3.04825
+);
+}
+
+line3d519
+{
+type midPoint;
+axis distance;
+start (
+25.925
+0.05
+-.05185
+);
+end (
+25.925
+0.05
+3.04815
+);
+}
+
+line3d520
+{
+type midPoint;
+axis distance;
+start (
+25.975
+0.05
+-.05195
+);
+end (
+25.975
+0.05
+3.04805
+);
+}
+
+line3d521
+{
+type midPoint;
+axis distance;
+start (
+26.025
+0.05
+-.05205
+);
+end (
+26.025
+0.05
+3.04795
+);
+}
+
+line3d522
+{
+type midPoint;
+axis distance;
+start (
+26.075
+0.05
+-.05215
+);
+end (
+26.075
+0.05
+3.04785
+);
+}
+
+line3d523
+{
+type midPoint;
+axis distance;
+start (
+26.125
+0.05
+-.05225
+);
+end (
+26.125
+0.05
+3.04775
+);
+}
+
+line3d524
+{
+type midPoint;
+axis distance;
+start (
+26.175
+0.05
+-.05235
+);
+end (
+26.175
+0.05
+3.04765
+);
+}
+
+line3d525
+{
+type midPoint;
+axis distance;
+start (
+26.225
+0.05
+-.05245
+);
+end (
+26.225
+0.05
+3.04755
+);
+}
+
+line3d526
+{
+type midPoint;
+axis distance;
+start (
+26.275
+0.05
+-.05255
+);
+end (
+26.275
+0.05
+3.04745
+);
+}
+
+line3d527
+{
+type midPoint;
+axis distance;
+start (
+26.325
+0.05
+-.05265
+);
+end (
+26.325
+0.05
+3.04735
+);
+}
+
+line3d528
+{
+type midPoint;
+axis distance;
+start (
+26.375
+0.05
+-.05275
+);
+end (
+26.375
+0.05
+3.04725
+);
+}
+
+line3d529
+{
+type midPoint;
+axis distance;
+start (
+26.425
+0.05
+-.05285
+);
+end (
+26.425
+0.05
+3.04715
+);
+}
+
+line3d530
+{
+type midPoint;
+axis distance;
+start (
+26.475
+0.05
+-.05295
+);
+end (
+26.475
+0.05
+3.04705
+);
+}
+
+line3d531
+{
+type midPoint;
+axis distance;
+start (
+26.525
+0.05
+-.05305
+);
+end (
+26.525
+0.05
+3.04695
+);
+}
+
+line3d532
+{
+type midPoint;
+axis distance;
+start (
+26.575
+0.05
+-.05315
+);
+end (
+26.575
+0.05
+3.04685
+);
+}
+
+line3d533
+{
+type midPoint;
+axis distance;
+start (
+26.625
+0.05
+-.05325
+);
+end (
+26.625
+0.05
+3.04675
+);
+}
+
+line3d534
+{
+type midPoint;
+axis distance;
+start (
+26.675
+0.05
+-.05335
+);
+end (
+26.675
+0.05
+3.04665
+);
+}
+
+line3d535
+{
+type midPoint;
+axis distance;
+start (
+26.725
+0.05
+-.05345
+);
+end (
+26.725
+0.05
+3.04655
+);
+}
+
+line3d536
+{
+type midPoint;
+axis distance;
+start (
+26.775
+0.05
+-.05355
+);
+end (
+26.775
+0.05
+3.04645
+);
+}
+
+line3d537
+{
+type midPoint;
+axis distance;
+start (
+26.825
+0.05
+-.05365
+);
+end (
+26.825
+0.05
+3.04635
+);
+}
+
+line3d538
+{
+type midPoint;
+axis distance;
+start (
+26.875
+0.05
+-.05375
+);
+end (
+26.875
+0.05
+3.04625
+);
+}
+
+line3d539
+{
+type midPoint;
+axis distance;
+start (
+26.925
+0.05
+-.05385
+);
+end (
+26.925
+0.05
+3.04615
+);
+}
+
+line3d540
+{
+type midPoint;
+axis distance;
+start (
+26.975
+0.05
+-.05395
+);
+end (
+26.975
+0.05
+3.04605
+);
+}
+
+line3d541
+{
+type midPoint;
+axis distance;
+start (
+27.025
+0.05
+-.05405
+);
+end (
+27.025
+0.05
+3.04595
+);
+}
+
+line3d542
+{
+type midPoint;
+axis distance;
+start (
+27.075
+0.05
+-.05415
+);
+end (
+27.075
+0.05
+3.04585
+);
+}
+
+line3d543
+{
+type midPoint;
+axis distance;
+start (
+27.125
+0.05
+-.05425
+);
+end (
+27.125
+0.05
+3.04575
+);
+}
+
+line3d544
+{
+type midPoint;
+axis distance;
+start (
+27.175
+0.05
+-.05435
+);
+end (
+27.175
+0.05
+3.04565
+);
+}
+
+line3d545
+{
+type midPoint;
+axis distance;
+start (
+27.225
+0.05
+-.05445
+);
+end (
+27.225
+0.05
+3.04555
+);
+}
+
+line3d546
+{
+type midPoint;
+axis distance;
+start (
+27.275
+0.05
+-.05455
+);
+end (
+27.275
+0.05
+3.04545
+);
+}
+
+line3d547
+{
+type midPoint;
+axis distance;
+start (
+27.325
+0.05
+-.05465
+);
+end (
+27.325
+0.05
+3.04535
+);
+}
+
+line3d548
+{
+type midPoint;
+axis distance;
+start (
+27.375
+0.05
+-.05475
+);
+end (
+27.375
+0.05
+3.04525
+);
+}
+
+line3d549
+{
+type midPoint;
+axis distance;
+start (
+27.425
+0.05
+-.05485
+);
+end (
+27.425
+0.05
+3.04515
+);
+}
+
+line3d550
+{
+type midPoint;
+axis distance;
+start (
+27.475
+0.05
+-.05495
+);
+end (
+27.475
+0.05
+3.04505
+);
+}
+
+line3d551
+{
+type midPoint;
+axis distance;
+start (
+27.525
+0.05
+-.05505
+);
+end (
+27.525
+0.05
+3.04495
+);
+}
+
+line3d552
+{
+type midPoint;
+axis distance;
+start (
+27.575
+0.05
+-.05515
+);
+end (
+27.575
+0.05
+3.04485
+);
+}
+
+line3d553
+{
+type midPoint;
+axis distance;
+start (
+27.625
+0.05
+-.05525
+);
+end (
+27.625
+0.05
+3.04475
+);
+}
+
+line3d554
+{
+type midPoint;
+axis distance;
+start (
+27.675
+0.05
+-.05535
+);
+end (
+27.675
+0.05
+3.04465
+);
+}
+
+line3d555
+{
+type midPoint;
+axis distance;
+start (
+27.725
+0.05
+-.05545
+);
+end (
+27.725
+0.05
+3.04455
+);
+}
+
+line3d556
+{
+type midPoint;
+axis distance;
+start (
+27.775
+0.05
+-.05555
+);
+end (
+27.775
+0.05
+3.04445
+);
+}
+
+line3d557
+{
+type midPoint;
+axis distance;
+start (
+27.825
+0.05
+-.05565
+);
+end (
+27.825
+0.05
+3.04435
+);
+}
+
+line3d558
+{
+type midPoint;
+axis distance;
+start (
+27.875
+0.05
+-.05575
+);
+end (
+27.875
+0.05
+3.04425
+);
+}
+
+line3d559
+{
+type midPoint;
+axis distance;
+start (
+27.925
+0.05
+-.05585
+);
+end (
+27.925
+0.05
+3.04415
+);
+}
+
+line3d560
+{
+type midPoint;
+axis distance;
+start (
+27.975
+0.05
+-.05595
+);
+end (
+27.975
+0.05
+3.04405
+);
+}
+
+line3d561
+{
+type midPoint;
+axis distance;
+start (
+28.025
+0.05
+-.05605
+);
+end (
+28.025
+0.05
+3.04395
+);
+}
+
+line3d562
+{
+type midPoint;
+axis distance;
+start (
+28.075
+0.05
+-.05615
+);
+end (
+28.075
+0.05
+3.04385
+);
+}
+
+line3d563
+{
+type midPoint;
+axis distance;
+start (
+28.125
+0.05
+-.05625
+);
+end (
+28.125
+0.05
+3.04375
+);
+}
+
+line3d564
+{
+type midPoint;
+axis distance;
+start (
+28.175
+0.05
+-.05635
+);
+end (
+28.175
+0.05
+3.04365
+);
+}
+
+line3d565
+{
+type midPoint;
+axis distance;
+start (
+28.225
+0.05
+-.05645
+);
+end (
+28.225
+0.05
+3.04355
+);
+}
+
+line3d566
+{
+type midPoint;
+axis distance;
+start (
+28.275
+0.05
+-.05655
+);
+end (
+28.275
+0.05
+3.04345
+);
+}
+
+line3d567
+{
+type midPoint;
+axis distance;
+start (
+28.325
+0.05
+-.05665
+);
+end (
+28.325
+0.05
+3.04335
+);
+}
+
+line3d568
+{
+type midPoint;
+axis distance;
+start (
+28.375
+0.05
+-.05675
+);
+end (
+28.375
+0.05
+3.04325
+);
+}
+
+line3d569
+{
+type midPoint;
+axis distance;
+start (
+28.425
+0.05
+-.05685
+);
+end (
+28.425
+0.05
+3.04315
+);
+}
+
+line3d570
+{
+type midPoint;
+axis distance;
+start (
+28.475
+0.05
+-.05695
+);
+end (
+28.475
+0.05
+3.04305
+);
+}
+
+line3d571
+{
+type midPoint;
+axis distance;
+start (
+28.525
+0.05
+-.05705
+);
+end (
+28.525
+0.05
+3.04295
+);
+}
+
+line3d572
+{
+type midPoint;
+axis distance;
+start (
+28.575
+0.05
+-.05715
+);
+end (
+28.575
+0.05
+3.04285
+);
+}
+
+line3d573
+{
+type midPoint;
+axis distance;
+start (
+28.625
+0.05
+-.05725
+);
+end (
+28.625
+0.05
+3.04275
+);
+}
+
+line3d574
+{
+type midPoint;
+axis distance;
+start (
+28.675
+0.05
+-.05735
+);
+end (
+28.675
+0.05
+3.04265
+);
+}
+
+line3d575
+{
+type midPoint;
+axis distance;
+start (
+28.725
+0.05
+-.05745
+);
+end (
+28.725
+0.05
+3.04255
+);
+}
+
+line3d576
+{
+type midPoint;
+axis distance;
+start (
+28.775
+0.05
+-.05755
+);
+end (
+28.775
+0.05
+3.04245
+);
+}
+
+line3d577
+{
+type midPoint;
+axis distance;
+start (
+28.825
+0.05
+-.05765
+);
+end (
+28.825
+0.05
+3.04235
+);
+}
+
+line3d578
+{
+type midPoint;
+axis distance;
+start (
+28.875
+0.05
+-.05775
+);
+end (
+28.875
+0.05
+3.04225
+);
+}
+
+line3d579
+{
+type midPoint;
+axis distance;
+start (
+28.925
+0.05
+-.05785
+);
+end (
+28.925
+0.05
+3.04215
+);
+}
+
+line3d580
+{
+type midPoint;
+axis distance;
+start (
+28.975
+0.05
+-.05795
+);
+end (
+28.975
+0.05
+3.04205
+);
+}
+
+line3d581
+{
+type midPoint;
+axis distance;
+start (
+29.025
+0.05
+-.05805
+);
+end (
+29.025
+0.05
+3.04195
+);
+}
+
+line3d582
+{
+type midPoint;
+axis distance;
+start (
+29.075
+0.05
+-.05815
+);
+end (
+29.075
+0.05
+3.04185
+);
+}
+
+line3d583
+{
+type midPoint;
+axis distance;
+start (
+29.125
+0.05
+-.05825
+);
+end (
+29.125
+0.05
+3.04175
+);
+}
+
+line3d584
+{
+type midPoint;
+axis distance;
+start (
+29.175
+0.05
+-.05835
+);
+end (
+29.175
+0.05
+3.04165
+);
+}
+
+line3d585
+{
+type midPoint;
+axis distance;
+start (
+29.225
+0.05
+-.05845
+);
+end (
+29.225
+0.05
+3.04155
+);
+}
+
+line3d586
+{
+type midPoint;
+axis distance;
+start (
+29.275
+0.05
+-.05855
+);
+end (
+29.275
+0.05
+3.04145
+);
+}
+
+line3d587
+{
+type midPoint;
+axis distance;
+start (
+29.325
+0.05
+-.05865
+);
+end (
+29.325
+0.05
+3.04135
+);
+}
+
+line3d588
+{
+type midPoint;
+axis distance;
+start (
+29.375
+0.05
+-.05875
+);
+end (
+29.375
+0.05
+3.04125
+);
+}
+
+line3d589
+{
+type midPoint;
+axis distance;
+start (
+29.425
+0.05
+-.05885
+);
+end (
+29.425
+0.05
+3.04115
+);
+}
+
+line3d590
+{
+type midPoint;
+axis distance;
+start (
+29.475
+0.05
+-.05895
+);
+end (
+29.475
+0.05
+3.04105
+);
+}
+
+line3d591
+{
+type midPoint;
+axis distance;
+start (
+29.525
+0.05
+-.05905
+);
+end (
+29.525
+0.05
+3.04095
+);
+}
+
+line3d592
+{
+type midPoint;
+axis distance;
+start (
+29.575
+0.05
+-.05915
+);
+end (
+29.575
+0.05
+3.04085
+);
+}
+
+line3d593
+{
+type midPoint;
+axis distance;
+start (
+29.625
+0.05
+-.05925
+);
+end (
+29.625
+0.05
+3.04075
+);
+}
+
+line3d594
+{
+type midPoint;
+axis distance;
+start (
+29.675
+0.05
+-.05935
+);
+end (
+29.675
+0.05
+3.04065
+);
+}
+
+line3d595
+{
+type midPoint;
+axis distance;
+start (
+29.725
+0.05
+-.05945
+);
+end (
+29.725
+0.05
+3.04055
+);
+}
+
+line3d596
+{
+type midPoint;
+axis distance;
+start (
+29.775
+0.05
+-.05955
+);
+end (
+29.775
+0.05
+3.04045
+);
+}
+
+line3d597
+{
+type midPoint;
+axis distance;
+start (
+29.825
+0.05
+-.05965
+);
+end (
+29.825
+0.05
+3.04035
+);
+}
+
+line3d598
+{
+type midPoint;
+axis distance;
+start (
+29.875
+0.05
+-.05975
+);
+end (
+29.875
+0.05
+3.04025
+);
+}
+
+line3d599
+{
+type midPoint;
+axis distance;
+start (
+29.925
+0.05
+-.05985
+);
+end (
+29.925
+0.05
+3.04015
+);
+}
+
+line3d600
+{
+type midPoint;
+axis distance;
+start (
+29.975
+0.05
+-.05995
+);
+end (
+29.975
+0.05
+3.04005
+);
+}
+
+line3d601
+{
+type midPoint;
+axis distance;
+start (
+30.025
+0.05
+-.06005
+);
+end (
+30.025
+0.05
+3.03995
+);
+}
+
+line3d602
+{
+type midPoint;
+axis distance;
+start (
+30.075
+0.05
+-.06015
+);
+end (
+30.075
+0.05
+3.03985
+);
+}
+
+line3d603
+{
+type midPoint;
+axis distance;
+start (
+30.125
+0.05
+-.06025
+);
+end (
+30.125
+0.05
+3.03975
+);
+}
+
+line3d604
+{
+type midPoint;
+axis distance;
+start (
+30.175
+0.05
+-.06035
+);
+end (
+30.175
+0.05
+3.03965
+);
+}
+
+line3d605
+{
+type midPoint;
+axis distance;
+start (
+30.225
+0.05
+-.06045
+);
+end (
+30.225
+0.05
+3.03955
+);
+}
+
+line3d606
+{
+type midPoint;
+axis distance;
+start (
+30.275
+0.05
+-.06055
+);
+end (
+30.275
+0.05
+3.03945
+);
+}
+
+line3d607
+{
+type midPoint;
+axis distance;
+start (
+30.325
+0.05
+-.06065
+);
+end (
+30.325
+0.05
+3.03935
+);
+}
+
+line3d608
+{
+type midPoint;
+axis distance;
+start (
+30.375
+0.05
+-.06075
+);
+end (
+30.375
+0.05
+3.03925
+);
+}
+
+line3d609
+{
+type midPoint;
+axis distance;
+start (
+30.425
+0.05
+-.06085
+);
+end (
+30.425
+0.05
+3.03915
+);
+}
+
+line3d610
+{
+type midPoint;
+axis distance;
+start (
+30.475
+0.05
+-.06095
+);
+end (
+30.475
+0.05
+3.03905
+);
+}
+
+line3d611
+{
+type midPoint;
+axis distance;
+start (
+30.525
+0.05
+-.06105
+);
+end (
+30.525
+0.05
+3.03895
+);
+}
+
+line3d612
+{
+type midPoint;
+axis distance;
+start (
+30.575
+0.05
+-.06115
+);
+end (
+30.575
+0.05
+3.03885
+);
+}
+
+line3d613
+{
+type midPoint;
+axis distance;
+start (
+30.625
+0.05
+-.06125
+);
+end (
+30.625
+0.05
+3.03875
+);
+}
+
+line3d614
+{
+type midPoint;
+axis distance;
+start (
+30.675
+0.05
+-.06135
+);
+end (
+30.675
+0.05
+3.03865
+);
+}
+
+line3d615
+{
+type midPoint;
+axis distance;
+start (
+30.725
+0.05
+-.06145
+);
+end (
+30.725
+0.05
+3.03855
+);
+}
+
+line3d616
+{
+type midPoint;
+axis distance;
+start (
+30.775
+0.05
+-.06155
+);
+end (
+30.775
+0.05
+3.03845
+);
+}
+
+line3d617
+{
+type midPoint;
+axis distance;
+start (
+30.825
+0.05
+-.06165
+);
+end (
+30.825
+0.05
+3.03835
+);
+}
+
+line3d618
+{
+type midPoint;
+axis distance;
+start (
+30.875
+0.05
+-.06175
+);
+end (
+30.875
+0.05
+3.03825
+);
+}
+
+line3d619
+{
+type midPoint;
+axis distance;
+start (
+30.925
+0.05
+-.06185
+);
+end (
+30.925
+0.05
+3.03815
+);
+}
+
+line3d620
+{
+type midPoint;
+axis distance;
+start (
+30.975
+0.05
+-.06195
+);
+end (
+30.975
+0.05
+3.03805
+);
+}
+
+line3d621
+{
+type midPoint;
+axis distance;
+start (
+31.025
+0.05
+-.06205
+);
+end (
+31.025
+0.05
+3.03795
+);
+}
+
+line3d622
+{
+type midPoint;
+axis distance;
+start (
+31.075
+0.05
+-.06215
+);
+end (
+31.075
+0.05
+3.03785
+);
+}
+
+line3d623
+{
+type midPoint;
+axis distance;
+start (
+31.125
+0.05
+-.06225
+);
+end (
+31.125
+0.05
+3.03775
+);
+}
+
+line3d624
+{
+type midPoint;
+axis distance;
+start (
+31.175
+0.05
+-.06235
+);
+end (
+31.175
+0.05
+3.03765
+);
+}
+
+line3d625
+{
+type midPoint;
+axis distance;
+start (
+31.225
+0.05
+-.06245
+);
+end (
+31.225
+0.05
+3.03755
+);
+}
+
+line3d626
+{
+type midPoint;
+axis distance;
+start (
+31.275
+0.05
+-.06255
+);
+end (
+31.275
+0.05
+3.03745
+);
+}
+
+line3d627
+{
+type midPoint;
+axis distance;
+start (
+31.325
+0.05
+-.06265
+);
+end (
+31.325
+0.05
+3.03735
+);
+}
+
+line3d628
+{
+type midPoint;
+axis distance;
+start (
+31.375
+0.05
+-.06275
+);
+end (
+31.375
+0.05
+3.03725
+);
+}
+
+line3d629
+{
+type midPoint;
+axis distance;
+start (
+31.425
+0.05
+-.06285
+);
+end (
+31.425
+0.05
+3.03715
+);
+}
+
+line3d630
+{
+type midPoint;
+axis distance;
+start (
+31.475
+0.05
+-.06295
+);
+end (
+31.475
+0.05
+3.03705
+);
+}
+
+line3d631
+{
+type midPoint;
+axis distance;
+start (
+31.525
+0.05
+-.06305
+);
+end (
+31.525
+0.05
+3.03695
+);
+}
+
+line3d632
+{
+type midPoint;
+axis distance;
+start (
+31.575
+0.05
+-.06315
+);
+end (
+31.575
+0.05
+3.03685
+);
+}
+
+line3d633
+{
+type midPoint;
+axis distance;
+start (
+31.625
+0.05
+-.06325
+);
+end (
+31.625
+0.05
+3.03675
+);
+}
+
+line3d634
+{
+type midPoint;
+axis distance;
+start (
+31.675
+0.05
+-.06335
+);
+end (
+31.675
+0.05
+3.03665
+);
+}
+
+line3d635
+{
+type midPoint;
+axis distance;
+start (
+31.725
+0.05
+-.06345
+);
+end (
+31.725
+0.05
+3.03655
+);
+}
+
+line3d636
+{
+type midPoint;
+axis distance;
+start (
+31.775
+0.05
+-.06355
+);
+end (
+31.775
+0.05
+3.03645
+);
+}
+
+line3d637
+{
+type midPoint;
+axis distance;
+start (
+31.825
+0.05
+-.06365
+);
+end (
+31.825
+0.05
+3.03635
+);
+}
+
+line3d638
+{
+type midPoint;
+axis distance;
+start (
+31.875
+0.05
+-.06375
+);
+end (
+31.875
+0.05
+3.03625
+);
+}
+
+line3d639
+{
+type midPoint;
+axis distance;
+start (
+31.925
+0.05
+-.06385
+);
+end (
+31.925
+0.05
+3.03615
+);
+}
+
+line3d640
+{
+type midPoint;
+axis distance;
+start (
+31.975
+0.05
+-.06395
+);
+end (
+31.975
+0.05
+3.03605
+);
+}
+
+line3d641
+{
+type midPoint;
+axis distance;
+start (
+32.025
+0.05
+-.06405
+);
+end (
+32.025
+0.05
+3.03595
+);
+}
+
+line3d642
+{
+type midPoint;
+axis distance;
+start (
+32.075
+0.05
+-.06415
+);
+end (
+32.075
+0.05
+3.03585
+);
+}
+
+line3d643
+{
+type midPoint;
+axis distance;
+start (
+32.125
+0.05
+-.06425
+);
+end (
+32.125
+0.05
+3.03575
+);
+}
+
+line3d644
+{
+type midPoint;
+axis distance;
+start (
+32.175
+0.05
+-.06435
+);
+end (
+32.175
+0.05
+3.03565
+);
+}
+
+line3d645
+{
+type midPoint;
+axis distance;
+start (
+32.225
+0.05
+-.06445
+);
+end (
+32.225
+0.05
+3.03555
+);
+}
+
+line3d646
+{
+type midPoint;
+axis distance;
+start (
+32.275
+0.05
+-.06455
+);
+end (
+32.275
+0.05
+3.03545
+);
+}
+
+line3d647
+{
+type midPoint;
+axis distance;
+start (
+32.325
+0.05
+-.06465
+);
+end (
+32.325
+0.05
+3.03535
+);
+}
+
+line3d648
+{
+type midPoint;
+axis distance;
+start (
+32.375
+0.05
+-.06475
+);
+end (
+32.375
+0.05
+3.03525
+);
+}
+
+line3d649
+{
+type midPoint;
+axis distance;
+start (
+32.425
+0.05
+-.06485
+);
+end (
+32.425
+0.05
+3.03515
+);
+}
+
+line3d650
+{
+type midPoint;
+axis distance;
+start (
+32.475
+0.05
+-.06495
+);
+end (
+32.475
+0.05
+3.03505
+);
+}
+
+line3d651
+{
+type midPoint;
+axis distance;
+start (
+32.525
+0.05
+-.06505
+);
+end (
+32.525
+0.05
+3.03495
+);
+}
+
+line3d652
+{
+type midPoint;
+axis distance;
+start (
+32.575
+0.05
+-.06515
+);
+end (
+32.575
+0.05
+3.03485
+);
+}
+
+line3d653
+{
+type midPoint;
+axis distance;
+start (
+32.625
+0.05
+-.06525
+);
+end (
+32.625
+0.05
+3.03475
+);
+}
+
+line3d654
+{
+type midPoint;
+axis distance;
+start (
+32.675
+0.05
+-.06535
+);
+end (
+32.675
+0.05
+3.03465
+);
+}
+
+line3d655
+{
+type midPoint;
+axis distance;
+start (
+32.725
+0.05
+-.06545
+);
+end (
+32.725
+0.05
+3.03455
+);
+}
+
+line3d656
+{
+type midPoint;
+axis distance;
+start (
+32.775
+0.05
+-.06555
+);
+end (
+32.775
+0.05
+3.03445
+);
+}
+
+line3d657
+{
+type midPoint;
+axis distance;
+start (
+32.825
+0.05
+-.06565
+);
+end (
+32.825
+0.05
+3.03435
+);
+}
+
+line3d658
+{
+type midPoint;
+axis distance;
+start (
+32.875
+0.05
+-.06575
+);
+end (
+32.875
+0.05
+3.03425
+);
+}
+
+line3d659
+{
+type midPoint;
+axis distance;
+start (
+32.925
+0.05
+-.06585
+);
+end (
+32.925
+0.05
+3.03415
+);
+}
+
+line3d660
+{
+type midPoint;
+axis distance;
+start (
+32.975
+0.05
+-.06595
+);
+end (
+32.975
+0.05
+3.03405
+);
+}
+
+line3d661
+{
+type midPoint;
+axis distance;
+start (
+33.025
+0.05
+-.06605
+);
+end (
+33.025
+0.05
+3.03395
+);
+}
+
+line3d662
+{
+type midPoint;
+axis distance;
+start (
+33.075
+0.05
+-.06615
+);
+end (
+33.075
+0.05
+3.03385
+);
+}
+
+line3d663
+{
+type midPoint;
+axis distance;
+start (
+33.125
+0.05
+-.06625
+);
+end (
+33.125
+0.05
+3.03375
+);
+}
+
+line3d664
+{
+type midPoint;
+axis distance;
+start (
+33.175
+0.05
+-.06635
+);
+end (
+33.175
+0.05
+3.03365
+);
+}
+
+line3d665
+{
+type midPoint;
+axis distance;
+start (
+33.225
+0.05
+-.06645
+);
+end (
+33.225
+0.05
+3.03355
+);
+}
+
+line3d666
+{
+type midPoint;
+axis distance;
+start (
+33.275
+0.05
+-.06655
+);
+end (
+33.275
+0.05
+3.03345
+);
+}
+
+line3d667
+{
+type midPoint;
+axis distance;
+start (
+33.325
+0.05
+-.06665
+);
+end (
+33.325
+0.05
+3.03335
+);
+}
+
+line3d668
+{
+type midPoint;
+axis distance;
+start (
+33.375
+0.05
+-.06675
+);
+end (
+33.375
+0.05
+3.03325
+);
+}
+
+line3d669
+{
+type midPoint;
+axis distance;
+start (
+33.425
+0.05
+-.06685
+);
+end (
+33.425
+0.05
+3.03315
+);
+}
+
+line3d670
+{
+type midPoint;
+axis distance;
+start (
+33.475
+0.05
+-.06695
+);
+end (
+33.475
+0.05
+3.03305
+);
+}
+
+line3d671
+{
+type midPoint;
+axis distance;
+start (
+33.525
+0.05
+-.06705
+);
+end (
+33.525
+0.05
+3.03295
+);
+}
+
+line3d672
+{
+type midPoint;
+axis distance;
+start (
+33.575
+0.05
+-.06715
+);
+end (
+33.575
+0.05
+3.03285
+);
+}
+
+line3d673
+{
+type midPoint;
+axis distance;
+start (
+33.625
+0.05
+-.06725
+);
+end (
+33.625
+0.05
+3.03275
+);
+}
+
+line3d674
+{
+type midPoint;
+axis distance;
+start (
+33.675
+0.05
+-.06735
+);
+end (
+33.675
+0.05
+3.03265
+);
+}
+
+line3d675
+{
+type midPoint;
+axis distance;
+start (
+33.725
+0.05
+-.06745
+);
+end (
+33.725
+0.05
+3.03255
+);
+}
+
+line3d676
+{
+type midPoint;
+axis distance;
+start (
+33.775
+0.05
+-.06755
+);
+end (
+33.775
+0.05
+3.03245
+);
+}
+
+line3d677
+{
+type midPoint;
+axis distance;
+start (
+33.825
+0.05
+-.06765
+);
+end (
+33.825
+0.05
+3.03235
+);
+}
+
+line3d678
+{
+type midPoint;
+axis distance;
+start (
+33.875
+0.05
+-.06775
+);
+end (
+33.875
+0.05
+3.03225
+);
+}
+
+line3d679
+{
+type midPoint;
+axis distance;
+start (
+33.925
+0.05
+-.06785
+);
+end (
+33.925
+0.05
+3.03215
+);
+}
+
+line3d680
+{
+type midPoint;
+axis distance;
+start (
+33.975
+0.05
+-.06795
+);
+end (
+33.975
+0.05
+3.03205
+);
+}
+
+line3d681
+{
+type midPoint;
+axis distance;
+start (
+34.025
+0.05
+-.06805
+);
+end (
+34.025
+0.05
+3.03195
+);
+}
+
+line3d682
+{
+type midPoint;
+axis distance;
+start (
+34.075
+0.05
+-.06815
+);
+end (
+34.075
+0.05
+3.03185
+);
+}
+
+line3d683
+{
+type midPoint;
+axis distance;
+start (
+34.125
+0.05
+-.06825
+);
+end (
+34.125
+0.05
+3.03175
+);
+}
+
+line3d684
+{
+type midPoint;
+axis distance;
+start (
+34.175
+0.05
+-.06835
+);
+end (
+34.175
+0.05
+3.03165
+);
+}
+
+line3d685
+{
+type midPoint;
+axis distance;
+start (
+34.225
+0.05
+-.06845
+);
+end (
+34.225
+0.05
+3.03155
+);
+}
+
+line3d686
+{
+type midPoint;
+axis distance;
+start (
+34.275
+0.05
+-.06855
+);
+end (
+34.275
+0.05
+3.03145
+);
+}
+
+line3d687
+{
+type midPoint;
+axis distance;
+start (
+34.325
+0.05
+-.06865
+);
+end (
+34.325
+0.05
+3.03135
+);
+}
+
+line3d688
+{
+type midPoint;
+axis distance;
+start (
+34.375
+0.05
+-.06875
+);
+end (
+34.375
+0.05
+3.03125
+);
+}
+
+line3d689
+{
+type midPoint;
+axis distance;
+start (
+34.425
+0.05
+-.06885
+);
+end (
+34.425
+0.05
+3.03115
+);
+}
+
+line3d690
+{
+type midPoint;
+axis distance;
+start (
+34.475
+0.05
+-.06895
+);
+end (
+34.475
+0.05
+3.03105
+);
+}
+
+line3d691
+{
+type midPoint;
+axis distance;
+start (
+34.525
+0.05
+-.06905
+);
+end (
+34.525
+0.05
+3.03095
+);
+}
+
+line3d692
+{
+type midPoint;
+axis distance;
+start (
+34.575
+0.05
+-.06915
+);
+end (
+34.575
+0.05
+3.03085
+);
+}
+
+line3d693
+{
+type midPoint;
+axis distance;
+start (
+34.625
+0.05
+-.06925
+);
+end (
+34.625
+0.05
+3.03075
+);
+}
+
+line3d694
+{
+type midPoint;
+axis distance;
+start (
+34.675
+0.05
+-.06935
+);
+end (
+34.675
+0.05
+3.03065
+);
+}
+
+line3d695
+{
+type midPoint;
+axis distance;
+start (
+34.725
+0.05
+-.06945
+);
+end (
+34.725
+0.05
+3.03055
+);
+}
+
+line3d696
+{
+type midPoint;
+axis distance;
+start (
+34.775
+0.05
+-.06955
+);
+end (
+34.775
+0.05
+3.03045
+);
+}
+
+line3d697
+{
+type midPoint;
+axis distance;
+start (
+34.825
+0.05
+-.06965
+);
+end (
+34.825
+0.05
+3.03035
+);
+}
+
+line3d698
+{
+type midPoint;
+axis distance;
+start (
+34.875
+0.05
+-.06975
+);
+end (
+34.875
+0.05
+3.03025
+);
+}
+
+line3d699
+{
+type midPoint;
+axis distance;
+start (
+34.925
+0.05
+-.06985
+);
+end (
+34.925
+0.05
+3.03015
+);
+}
+
+line3d700
+{
+type midPoint;
+axis distance;
+start (
+34.975
+0.05
+-.06995
+);
+end (
+34.975
+0.05
+3.03005
+);
+}
+
+
+);
+
+// Surface sampling definition: choice of
+//      plane : values on plane defined by point, normal.
+//      patch : values on patch.
+//
+// 1] patches are not triangulated by default
+// 2] planes are always triangulated
+// 3] iso-surfaces are always triangulated
+
+surfaces
+(
+ /*
+    constantPlane
+    {
+        type            plane;    // always triangulated
+        basePoint       (0.0501 0.0501 0.005);
+        normalVector    (0.1 0.1 1);
+
+        //- Optional: restrict to a particular zone
+        // zoneName        zone1;
+    }
+ */
+ /*
+    interpolatedPlane
+    {
+        type            plane;    // always triangulated
+        // make plane relative to the coordinateSystem (Cartesian)
+        coordinateSystem
+        {
+            origin      (0.0501 0.0501 0.005);
+        }
+        basePoint       (0 0 0);
+        normalVector    (0.1 0.1 1);
+        interpolate     true;
+    }
+
+    movingWall_constant
+    {
+        type            patch;
+        patchName       movingWall;
+        // Optional: whether to leave as faces (=default) or triangulate
+        // triangulate     false;
+    }
+
+    movingWall_interpolated
+    {
+        type            patch;
+        patchName       movingWall;
+        interpolate     true;
+        // Optional: whether to leave as faces (=default) or triangulate
+        // triangulate     false;
+    }
+ */
+ /*
+    interpolatedIso
+    {
+        // Iso surface for interpolated values only
+        type            isoSurface;    // always triangulated
+        isoField        alpha1;
+        isoValue        0.5;
+        interpolate     true;
+
+        //zone            ABC;          // Optional: zone only
+        //exposedPatchName fixedWalls;  // Optional: zone only
+
+        // regularise      false;    // Optional: do not simplify
+    }
+ */
+    /*
+    constantIso
+    {
+        // Iso surface for constant values.
+        // Triangles guaranteed not to cross cells.
+        type            isoSurfaceCell;    // always triangulated
+        isoField        rho;
+        isoValue        0.5;
+        interpolate     false;
+        regularise      false;              // do not simplify
+    }
+
+    triangleCut
+    {
+        // Cutingplane using iso surface
+        type            cuttingPlane;
+        planeType       pointAndNormal;
+        pointAndNormalDict
+        {
+            basePoint       (0.4 0 0.4);
+            normalVector    (1 0.2 0.2);
+        }
+        interpolate     true;
+
+        //zone            ABC;          // Optional: zone only
+        //exposedPatchName fixedWalls;  // Optional: zone only
+
+        // regularise      false;    // Optional: do not simplify
+    }
+    */
+);
+
+// *********************************************************************** //

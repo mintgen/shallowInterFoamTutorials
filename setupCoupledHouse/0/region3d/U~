@@ -1,0 +1,93 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.x                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    location    "370";
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0.01 0 0); 
+
+boundaryField
+{
+    front
+    {
+      type sifVelocity;
+      neighbourRegionName region2d;
+      neighbourPatchName frontIn2d;
+      neighbourFieldName H;
+      K K;
+      value           uniform (0 0 0);
+    }
+    back
+    {
+      type sifVelocity;
+      neighbourRegionName region2d;
+      neighbourPatchName backIn2d;
+      neighbourFieldName H;
+      K K;
+      value           uniform (0 0 0);
+    }
+    right
+    {
+      type sifVelocity;
+      neighbourRegionName region2d;
+      neighbourPatchName rightIn2d;
+      neighbourFieldName H;
+      K K;
+      value           uniform (0 0 0);
+    }
+    left
+    {
+      type sifVelocity;
+      neighbourRegionName region2d;
+      neighbourPatchName leftIn2d;
+      neighbourFieldName H;
+      K K;
+      value           uniform (0 0 0);
+    }
+    top
+    {
+        type            pressureInletOutletVelocity;
+        value           uniform (0 0 0); 
+    }
+    bottom
+    {
+        type            fixedValue;
+        value           uniform (0 0 0);
+    }
+	houseFront
+    {
+        type            fixedValue;
+        value           uniform (0 0 0);
+    }
+	houseLeft
+    {
+        type            fixedValue;
+        value           uniform (0 0 0);
+    }
+	houseBack
+    {
+        type            fixedValue;
+        value           uniform (0 0 0);
+    }
+	houseRight
+    {
+        type            fixedValue;
+        value           uniform (0 0 0);
+    }
+}
+
+
+// ************************************************************************* //

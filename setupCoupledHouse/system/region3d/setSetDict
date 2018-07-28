@@ -1,0 +1,7 @@
+// Modified from source: http://www.cfdsupport.com/Turbomachinery-CFD-manual/node374.html
+// Call with 'setSet -region <regionName> -batch <locationOfThisFile> -noVTK'
+
+faceSet facesfront new patchToFace front
+faceSet facesback new patchToFace back
+faceSet facesleft new patchToFace left
+faceSet facesright new patchToFace right

@@ -1,0 +1,92 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.x                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "370";
+    object      k;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0.01; 
+
+boundaryField
+{
+    front
+    {
+        type            sifK;
+        refValue        uniform 0.02; 
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        value           uniform 0.02; 
+        neighbourFieldName H;
+    }
+    back
+    {
+        type            sifK;
+        refValue        uniform 0.02; 
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        value           uniform 0.02; 
+        neighbourFieldName H;
+    }
+    right
+    {
+        type            sifK;
+        refValue        uniform 0.02; 
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        value           uniform 0.02; 
+        neighbourFieldName H;
+    }
+    left
+    {
+        type            sifK;
+        refValue        uniform 0.02; 
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        value           uniform 0.02; 
+        neighbourFieldName H;
+    }
+    top
+    {
+        type            zeroGradient;
+    }
+    bottom
+    {
+        type            kqRWallFunction;
+        value           uniform 0.2; 
+    }
+    houseFront
+    {
+        type            kqRWallFunction;
+        value           uniform 0.2; 
+    }
+    houseLeft
+    {
+        type            kqRWallFunction;
+        value           uniform 0.2; 
+    }
+    houseBack
+    {
+        type            kqRWallFunction;
+        value           uniform 0.2; 
+    }
+    houseRight
+    {
+        type            kqRWallFunction;
+        value           uniform 0.2; 
+    }
+}
+
+
+// ************************************************************************* //

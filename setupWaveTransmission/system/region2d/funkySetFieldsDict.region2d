@@ -1,0 +1,51 @@
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "/.automount/werner/Werner/bgschaid/bgschaid-foamStuff/DepositionTests";
+    case            "neutralTest";
+    instance        "system";
+    local           "";
+
+    class           dictionary;
+    object          funkySetFieldsDict;
+}
+
+defaultVariables (
+"sigma=1.0;"
+"mu=35.0;"
+"amp=0.5;"
+);
+
+expressions
+(
+	initBottomL1
+	{
+		field S;
+		create false;
+                expression "0.0 - pos().x * 0.001";
+                condition "pos().x <= 75.";
+                keepPatches true;
+	}
+/*
+	initGaussWave
+	{
+		field H;
+		create false;
+                expression " 1.0 + amp * 1.0 / (sigma * sqrt(2*pi)) * exp(-0.5*pow(((pos().x-mu)/sigma),2))";
+		variables $defaultVariables;
+                condition "pos().x <= 75.";
+                keepPatches true;
+	}
+	initGaussDischarge
+	{
+		field HU;
+		create false;
+                expression " vector(4.89152 * (1.0 + amp * 1.0 / (sigma * sqrt(2*pi)) * exp(-0.5*pow(((pos().x-mu)/sigma),2))),0,0)";
+		variables $defaultVariables;
+                condition "pos().x <= 75.";
+                keepPatches true;
+	}
+*/
+);

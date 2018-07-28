@@ -1,0 +1,97 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     3.1                                |
+|   \\  /    A nd           | Web:         http://www.extend-project.de       |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      H;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 0 0 0 0 0];
+
+internalField   uniform 0.1; 
+
+boundaryField
+{
+    frontOutCenter2d
+    {
+        type            zeroGradient;
+    }
+    frontOutSides2d
+    {
+        type            zeroGradient;
+    }
+    backOut2d
+    {
+        type       fixedValue;
+        value      uniform 0.685;
+	/*
+        type       kritischH;
+        kritischeFliesstiefe   1.612;
+        value      uniform 1.0;
+	*/
+    }
+    rightOut2d
+    {
+        type            zeroGradient;
+    }
+    leftOut2d
+    {
+        type            zeroGradient;
+    }
+    frontIn2d
+    {
+        type            sifFlowdepth;
+        refValue        uniform 0.1;
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        neighbourFieldName alpha1;
+        value           uniform 0.1;
+    }
+    backIn2d
+    {
+        type            sifFlowdepth;
+        refValue        uniform 0.1;
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        neighbourFieldName alpha1;
+        value           uniform 0.1;
+    }
+    leftIn2d
+    {
+        type            sifFlowdepth;
+        refValue        uniform 0.1;
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        neighbourFieldName alpha1;
+        value           uniform 0.1;
+    }
+    rightIn2d
+    {
+        type            sifFlowdepth;
+        refValue        uniform 0.1;
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        neighbourFieldName alpha1;
+        value           uniform 0.1;
+    }
+    bottom2d
+    {
+        type            empty;
+    }
+    top2d
+    {
+        type            empty;
+    }
+}
+
+
+// ************************************************************************* //

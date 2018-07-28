@@ -1,0 +1,41 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.2                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+forcesFront
+	{
+		type forces;
+		functionObjectLibs ("libforces.so");
+		patches	(houseBack);
+		region region3d;
+		rhoName rho;
+		pName p;
+		UName U;
+		CofR (0 0 0);
+		rhoInf 1000;
+		name forcesFront;
+		uitype forces;
+		outputControl timeStep;
+		outputInterval 1;
+		format ascii;
+	}
+forcesBack
+	{
+		type forces;
+		functionObjectLibs ("libforces.so");
+		patches	(houseFront);
+		region region3d;
+		rhoName rho;
+		pName p;
+		UName U;
+		CofR (0 0 0);
+		rhoInf 1000;
+		name forcesBack;
+		uitype forces;
+		outputControl timeStep;
+		outputInterval 1;
+		format ascii;
+	}
